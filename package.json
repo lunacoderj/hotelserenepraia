@@ -1,0 +1,62 @@
+{
+  "name": "hotel-serene-praia",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Luxury hospitality website - Apple keynote meets coastal resort",
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "optimize-images": "next-image-export-optimizer"
+  },
+  "dependencies": {
+    "@types/leaflet": "^1.9.21",
+    "autoprefixer": "^10.4.16",
+    "axios": "^1.6.2",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.4",
+    "gsap": "^3.12.2",
+    "leaflet": "^1.9.4",
+    "lenis": "^1.1.9",
+    "lightgallery": "^2.7.1",
+    "lucide-react": "^1.24.0",
+    "postcss": "^8.4.32",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.4",
+    "react-icons": "^4.12.0",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.20.0",
+    "swiper": "^11.0.3",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "next-image-export-optimizer": "^1.17.2",
+    "prettier": "^3.1.0",
+    "sharp": "^0.33.0",
+    "terser": "^5.49.0",
+    "vite": "^5.0.8",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
