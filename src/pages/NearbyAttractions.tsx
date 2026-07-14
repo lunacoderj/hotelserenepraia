@@ -85,14 +85,33 @@ export const NearbyAttractions = () => {
             }}
           >
             {/* Background Image with Hover Zoom */}
-            <div className="absolute inset-0 overflow-hidden">
-              <img 
-                src={attraction.image} 
-                alt={attraction.name} 
-                className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent opacity-90" />
-              <div className="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-1000" />
+            <div className="absolute inset-0 overflow-hidden flex">
+              {Array.isArray(attraction.image) ? (
+                <>
+                  <div className="w-1/2 h-full overflow-hidden border-r border-navy/20">
+                    <img 
+                      src={attraction.image[0]} 
+                      alt={attraction.name} 
+                      className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out"
+                    />
+                  </div>
+                  <div className="w-1/2 h-full overflow-hidden">
+                    <img 
+                      src={attraction.image[1]} 
+                      alt={attraction.name} 
+                      className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out"
+                    />
+                  </div>
+                </>
+              ) : (
+                <img 
+                  src={attraction.image as string} 
+                  alt={attraction.name} 
+                  className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent opacity-90 pointer-events-none" />
+              <div className="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-1000 pointer-events-none" />
             </div>
 
             {/* Content (Glassmorphic) */}

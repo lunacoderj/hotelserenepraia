@@ -44,6 +44,6 @@ export interface Attraction {
   distance: string
   time: string
   description: string
-  image: string
+  image: string | string[]
   mapLink: string
 }

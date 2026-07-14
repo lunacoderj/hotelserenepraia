@@ -4,6 +4,18 @@ const ORIGIN = encodeURIComponent('Hotel Serene Praia, Visakhapatnam, Andhra Pra
 
 export const attractionsData: Attraction[] = [
   {
+    id: 'adventure-nature-views',
+    name: 'Adventure & Nature Views',
+    distance: 'Variable',
+    time: 'Flexible',
+    description: 'Experience thrilling paragliding over the ocean and scenic ropeway rides offering majestic views of the Bay of Bengal.',
+    image: [
+      'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/para_gliding.png',
+      'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/roaf_way.png'
+    ],
+    mapLink: `https://www.google.com/maps/dir/?api=1&origin=${ORIGIN}&destination=${encodeURIComponent('Kailasagiri Ropeway, Visakhapatnam')}`
+  },
+  {
     id: 'rushikonda-beach',
     name: 'Rushikonda Beach',
     distance: '1 km',
