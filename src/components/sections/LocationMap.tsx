@@ -16,14 +16,14 @@ if (typeof window !== 'undefined') {
 }
 
 // Custom Icons
-const createCustomIcon = (imageUrl: string, label: string) => new L.DivIcon({
+const createCustomIcon = (imageUrl: string, label: string, imageClass: string = "object-cover") => new L.DivIcon({
   html: `
     <div class="flex flex-col items-center justify-center -ml-[30px] -mt-[70px] w-[60px] h-[90px] group cursor-pointer relative z-50">
       <div class="absolute -top-10 bg-navy text-pearl text-[10px] uppercase tracking-widest px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg z-50">
         ${label}
       </div>
       <div class="w-16 h-16 rounded-full border-4 border-gold shadow-[0_10px_30px_rgba(0,0,0,0.5)] overflow-hidden bg-white relative z-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-        <img src="${imageUrl}" class="w-full h-full object-cover scale-110" />
+        <img src="${imageUrl}" class="w-full h-full ${imageClass} scale-110" />
       </div>
       <div class="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[16px] border-t-gold -mt-1 drop-shadow-md flex-shrink-0 z-0 transition-transform duration-300 group-hover:scale-110" />
     </div>
@@ -33,8 +33,8 @@ const createCustomIcon = (imageUrl: string, label: string) => new L.DivIcon({
   iconAnchor: [0, 0],
 });
 
-const hotelIcon = createCustomIcon('https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/hero%20image.png', 'Hotel Serene Praia');
-const rushikondaIcon = createCustomIcon('https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/beachview.webp', 'Rushikonda Beach');
+const hotelIcon = createCustomIcon('https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png', 'Hotel Serene Praia', 'object-cover object-[80%_center]');
+const rushikondaIcon = createCustomIcon('https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/rushikondabeach.jpg', 'Rushikonda Beach');
 const thotlakondaIcon = createCustomIcon('https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/Thotlakonda-Beach.png', 'Thotlakonda Beach');
 
 export const LocationMap = () => {
@@ -93,7 +93,7 @@ export const LocationMap = () => {
               <Marker position={[17.7820, 83.3855]} icon={rushikondaIcon}>
                 <Popup className="font-body text-sm text-navy"><strong>Rushikonda Beach</strong><br/>Famous tourist spot</Popup>
               </Marker>
-              <Marker position={[17.8250, 83.4140]} icon={thotlakondaIcon}>
+              <Marker position={[17.8219666, 83.4159344]} icon={thotlakondaIcon}>
                 <Popup className="font-body text-sm text-navy"><strong>Thotlakonda Beach</strong><br/>Ancient Buddhist site & coastal views</Popup>
               </Marker>
             </MapContainer>

@@ -22,7 +22,7 @@ const customMarker = new L.DivIcon({
         Hotel Serene Praia
       </div>
       <div class="w-16 h-16 rounded-full border-4 border-gold shadow-[0_10px_30px_rgba(0,0,0,0.5)] overflow-hidden bg-white relative z-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-        <img src='https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/hero%20image.png' class="w-full h-full object-cover scale-110" />
+        <img src='https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png' class="w-full h-full object-cover object-[80%_center] scale-110" />
       </div>
       <div class="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[16px] border-t-gold -mt-1 drop-shadow-md flex-shrink-0 z-0 transition-transform duration-300 group-hover:scale-110" />
     </div>

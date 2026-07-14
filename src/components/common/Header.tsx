@@ -118,7 +118,7 @@ export const Header = () => {
                   <LuxuryButton variant="primary" className="w-full">Book Now</LuxuryButton>
                 </Link>
                 <a href={`tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}`} className="w-full">
-                  <LuxuryButton variant="outline" className="w-full">Call Us</LuxuryButton>
+                  <LuxuryButton variant="primary" className="w-full">Call Us</LuxuryButton>
                 </a>
               </motion.div>
             </nav>

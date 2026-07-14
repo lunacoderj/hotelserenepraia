@@ -3,7 +3,7 @@ export const CONTACT_CONFIG = {
   whatsapp: '+919494042204',
   email: 'hotelserenepraia@gmail.com',
   address: 'Swarnabharathi Nagar, Rushikonda, Visakhapatnam, Andhra Pradesh',
-  mapLink: 'https://maps.app.goo.gl/avbzCZYGcw8nxpvg7',
+  mapLink: 'https://maps.app.goo.gl/fGaScHSjwiaUE1nJ6',
   lat: 17.7941591, // Exact Hotel Serene Praia location
   lng: 83.389136, // Exact Hotel Serene Praia location
   instagram: 'https://instagram.com/hotelserenepraia',
