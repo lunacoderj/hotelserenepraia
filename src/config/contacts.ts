@@ -1,5 +1,5 @@
 export const CONTACT_CONFIG = {
-  phone: '+91-94940-42204',
+  phone: '08912502949',
   whatsapp: '+919494042204',
   email: 'hotelserenepraia@gmail.com',
   address: 'Swarnabharathi Nagar, Rushikonda, Visakhapatnam, Andhra Pradesh',

@@ -19,12 +19,16 @@ import { ClaimOffer } from './pages/offers/ClaimOffer'
 const ScrollToTop = () => {
   const { pathname } = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }, [pathname])
   return null
 }
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  // Ensure page starts at top on mount without smooth scrolling
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -33,8 +37,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)

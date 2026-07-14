@@ -4,6 +4,7 @@ import { useLenisScroll } from '../hooks';
 import { attractionsData } from '../data/attractions';
 import { LuxuryButton } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { AdventuresCarousel } from '../components/sections/AdventuresCarousel';
 
 export const NearbyAttractions = () => {
   useLenisScroll();
@@ -62,6 +63,7 @@ export const NearbyAttractions = () => {
       </section>
 
       {/* ─── STACKING CARDS SHOWCASE ─── */}
+      <AdventuresCarousel onRouteSelect={setSelectedRoute} />
       <section className="relative w-full max-w-[1400px] mx-auto px-4 md:px-8 pt-24 pb-64">
         <div className="text-center mb-24">
           <motion.h2 
@@ -87,22 +89,15 @@ export const NearbyAttractions = () => {
             {/* Background Image with Hover Zoom */}
             <div className="absolute inset-0 overflow-hidden flex">
               {Array.isArray(attraction.image) ? (
-                <>
-                  <div className="w-1/2 h-full overflow-hidden border-r border-navy/20">
+                attraction.image.map((img, idx) => (
+                  <div key={idx} className="flex-1 h-full overflow-hidden border-r border-navy/20 last:border-r-0">
                     <img 
-                      src={attraction.image[0]} 
-                      alt={attraction.name} 
+                      src={img} 
+                      alt={`${attraction.name} - Part ${idx + 1}`} 
                       className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out"
                     />
                   </div>
-                  <div className="w-1/2 h-full overflow-hidden">
-                    <img 
-                      src={attraction.image[1]} 
-                      alt={attraction.name} 
-                      className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out"
-                    />
-                  </div>
-                </>
+                ))
               ) : (
                 <img 
                   src={attraction.image as string} 
