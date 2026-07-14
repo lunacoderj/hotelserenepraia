@@ -17,11 +17,14 @@ L.Icon.Default.mergeOptions({
 
 const customMarker = new L.DivIcon({
   html: `
-    <div class="flex flex-col items-center justify-center -ml-[30px] -mt-[60px] w-[60px] h-[80px]">
-      <div class="w-16 h-16 rounded-full border-4 border-gold shadow-[0_10px_30px_rgba(0,0,0,0.3)] overflow-hidden bg-white relative z-10 flex-shrink-0">
-        <img src='https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png' class="w-full h-full object-cover scale-110" />
+    <div class="flex flex-col items-center justify-center -ml-[30px] -mt-[70px] w-[60px] h-[90px] group cursor-pointer relative z-50">
+      <div class="absolute -top-10 bg-navy text-pearl text-[10px] uppercase tracking-widest px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg z-50">
+        Hotel Serene Praia
       </div>
-      <div class="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[16px] border-t-gold -mt-1 drop-shadow-md flex-shrink-0 z-0" />
+      <div class="w-16 h-16 rounded-full border-4 border-gold shadow-[0_10px_30px_rgba(0,0,0,0.5)] overflow-hidden bg-white relative z-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+        <img src='https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/hero%20image.png' class="w-full h-full object-cover scale-110" />
+      </div>
+      <div class="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[16px] border-t-gold -mt-1 drop-shadow-md flex-shrink-0 z-0 transition-transform duration-300 group-hover:scale-110" />
     </div>
   `,
   className: 'custom-map-marker',
@@ -145,7 +148,7 @@ export const Contact = () => {
                 href={CONTACT_CONFIG.mapLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block px-8 py-3 bg-gold text-white font-bold tracking-widest uppercase text-xs rounded-full hover:bg-navy hover:scale-105 transition-all duration-300 shadow-[0_10px_20px_rgba(212,175,55,0.3)]"
+                className="inline-block px-8 py-3 bg-gold text-navy font-bold tracking-widest uppercase text-xs rounded-full hover:bg-gold-600 hover:scale-105 transition-all duration-300 shadow-[0_10px_20px_rgba(212,175,55,0.3)]"
               >
                 Open in Google Maps
               </a>
@@ -237,7 +240,7 @@ export const Contact = () => {
             </div>
 
             <div className="md:col-span-2 mt-4">
-              <button type="submit" className="w-full bg-navy hover:bg-navy-400 text-white font-bold tracking-widest uppercase py-5 rounded-xl transition-colors shadow-lg flex justify-center items-center gap-2">
+              <button type="submit" className="w-full bg-gold hover:bg-gold-600 text-navy font-bold tracking-widest uppercase py-5 rounded-xl transition-colors shadow-lg flex justify-center items-center gap-2">
                 Send Data to WhatsApp
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </button>
