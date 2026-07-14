@@ -107,7 +107,7 @@ export const Banquet = () => {
                 { value: "Grand", label: "Events" },
                 { value: "Premium", label: "Stage" },
                 { value: "Easy", label: "Entrance" },
-                { value: "₹23K", label: "Starting" },
+                { value: "₹22,999", label: "Starting" },
               ].map((stat, i) => (
                 <motion.div 
                   key={i}
@@ -241,7 +241,7 @@ export const Banquet = () => {
                   <span className="block font-body text-xs md:text-sm text-pearl/60 tracking-[0.3em] uppercase mt-2">Discount</span>
                 </div>
               </div>
-              <p className="font-body text-pearl/40 text-xs tracking-widest uppercase mt-6">Starting from ₹23,000</p>
+              <p className="font-body text-pearl/40 text-xs tracking-widest uppercase mt-6">Starting from ₹22,999</p>
             </div>
           </div>
         </motion.div>

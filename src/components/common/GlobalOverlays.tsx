@@ -8,7 +8,7 @@ const OFFERS = [
   {
     id: 'deluxe-offer',
     label: 'Deluxe',
-    tagline: 'Comfort Redefined',
+    tagline: 'Comfortable stay + kettle',
     actual: 2700,
     offer: 1999,
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/deluxe_room.jpg',
@@ -16,7 +16,7 @@ const OFFERS = [
   {
     id: 'premium-offer',
     label: 'Premium',
-    tagline: 'Elevated Living',
+    tagline: 'Premium interiors + kettle',
     actual: 4500,
     offer: 2899,
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/IMG_3020.JPG-1200x900.webp',
@@ -24,7 +24,7 @@ const OFFERS = [
   {
     id: 'executive-offer',
     label: 'Executive',
-    tagline: 'Peak Luxury',
+    tagline: 'Executive stay + sea view',
     actual: 6500,
     offer: 4499,
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/poster.png',
@@ -32,17 +32,17 @@ const OFFERS = [
   {
     id: 'suite-offer',
     label: 'Suite',
-    tagline: 'Ultimate Elegance',
+    tagline: '2 rooms, living area + sea view',
     actual: 6500,
-    offer: 4399,
+    offer: 5999,
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/beachview.webp',
   },
   {
     id: 'banquet-offer',
     label: 'Banquet',
-    tagline: 'Grand Events',
+    tagline: 'Celebrations & Events',
     actual: 30000,
-    offer: 23000,
+    offer: 22999,
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/hero%20image.png',
   },
 ];

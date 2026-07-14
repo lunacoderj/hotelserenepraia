@@ -26,7 +26,7 @@ export const offersData: Offer[] = [
     validUntil: targetDateString,
     actualPrice: 4500,
     offerPrice: 2899,
-    features: ['Premium Interiors', 'Smart TV', 'Workspace', 'Electric Kettle', 'Premium Bathroom'],
+    features: ['Premium Interiors', 'Electric Kettle', 'Smart TV', 'Workspace', 'Premium Bathroom'],
     terms: ['Valid for bookings made before the timer expires.', 'Subject to availability.', 'Non-refundable.'],
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/IMG_3020.JPG-1200x900.webp'
   },
@@ -37,8 +37,8 @@ export const offersData: Offer[] = [
     description: 'Indulge in spacious elegance. Our Suite Room offers a separate living area and breathtaking sea views.',
     validUntil: targetDateString,
     actualPrice: 6500,
-    offerPrice: 4399,
-    features: ['Bedroom & Separate Living Room', 'Grey Sofa', 'Mini Fridge', 'Sea View', 'Premium Bathroom'],
+    offerPrice: 5999,
+    features: ['2 Rooms', 'Living Area & Sofa', 'Mini Fridge', 'Electric Kettle', 'Sea View'],
     terms: ['Valid for bookings made before the timer expires.', 'Subject to availability.', 'Non-refundable.'],
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/beachview.webp'
   },
@@ -50,7 +50,7 @@ export const offersData: Offer[] = [
     validUntil: targetDateString,
     actualPrice: 6500,
     offerPrice: 4499,
-    features: ['Executive Bedroom', 'Mini Fridge', 'Sea View', 'Premium Bathroom', 'Electric Kettle'],
+    features: ['Premium Executive Stay', 'Mini Fridge', 'Electric Kettle', 'Sea View', 'Premium Bathroom'],
     terms: ['Valid for bookings made before the timer expires.', 'Subject to availability.', 'Non-refundable.'],
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/poster.png'
   },
@@ -61,8 +61,8 @@ export const offersData: Offer[] = [
     description: 'Host your unforgettable event in our grand banquet hall. Perfect for weddings and corporate events.',
     validUntil: targetDateString,
     actualPrice: 30000,
-    offerPrice: 23000,
-    features: ['Corporate Events', 'Birthdays', 'Weddings', 'Functions', 'Celebrations', 'Large Capacity'],
+    offerPrice: 22999,
+    features: ['Celebrations', 'Parties', 'Functions', 'Corporate Events', 'Weddings', 'Birthdays'],
     terms: ['Valid for events booked before the timer expires.', 'Subject to availability.', 'Advance booking required.'],
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/hero%20image.png'
   }
