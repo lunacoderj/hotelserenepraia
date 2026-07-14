@@ -90,7 +90,8 @@ export const GlobalOverlays = () => {
   const handleClaimOffer = () => {
     setShowOfferPopup(false);
     setIsOfferDismissed(true);
-    navigate(`/offers/${selectedOffer}`);
+    const baseId = selectedOffer.replace('-offer', '');
+    navigate(`/claim-offer/${baseId}`);
   };
 
   const dismissOffer = () => {
