@@ -27,8 +27,9 @@ export const roomsData: Room[] = [
       ]
     },
     images: {
-      main: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/deluxe_room.jpg',
+      main: '/images/rooms/deluxe/deluxe_bed.jpeg',
       gallery: [
+        '/images/rooms/deluxe/deluxe_bed.jpeg',
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/deluxe_thumbnail.png',
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/deluxe_room.jpg',
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/bedroom.png',
@@ -67,6 +68,7 @@ export const roomsData: Room[] = [
       gallery: [
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/IMG_3020.JPG-1200x900.webp',
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/IMG_3041.JPG-1200x900.webp',
+        '/images/rooms/premium/premium_washroom.jpeg',
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/WhatsApp-Image-2026-05-23-at-19.50.34-1200x900.webp'
       ]
     }
@@ -97,8 +99,9 @@ export const roomsData: Room[] = [
       ]
     },
     images: {
-      main: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/HERO.png',
+      main: '/images/rooms/executive/executive_room.jpeg',
       gallery: [
+        '/images/rooms/executive/executive_room.jpeg',
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/HERO.png',
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/image1.png',
         'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/image2.png',

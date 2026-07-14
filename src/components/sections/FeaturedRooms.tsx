@@ -8,7 +8,7 @@ const featuredRooms = [
   {
     id: 'deluxe',
     name: 'Deluxe Room',
-    image: '/images/rooms/deluxe/bedroom/deluxe_room.jpg',
+    image: '/images/rooms/deluxe/deluxe_bed.jpeg',
     price: '₹1,999',
     actualPrice: '₹2,700',
     features: ['Comfortable Stay', 'Smart TV', 'Workspace'],
@@ -24,7 +24,7 @@ const featuredRooms = [
   {
     id: 'executive',
     name: 'Executive Room',
-    image: '/images/rooms/executive/image2.png',
+    image: '/images/rooms/executive/executive_room.jpeg',
     price: '₹4,499',
     actualPrice: '₹6,500',
     features: ['Executive Bedroom', 'Sea View', 'Premium Bathroom'],
