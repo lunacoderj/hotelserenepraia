@@ -67,7 +67,7 @@ export const About = () => {
             <div className="relative w-full h-[300px] lg:h-full min-h-[400px] rounded-sm group overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-gold/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-in-out z-10" />
               <img 
-                src="/images/gallery/ChatGPT Image Jul 9, 2026, 09_07_23 PM.png" 
+                src="https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/ChatGPT%20Image%20Jul%209%2C%202026%2C%2009_07_23%20PM.png" 
                 alt="A Legacy of Coastal Elegance" 
                 className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out"
               />

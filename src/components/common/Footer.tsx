@@ -9,7 +9,7 @@ export const Footer = () => {
         <div>
           <div className="mb-6">
             <img 
-              src="/images/logo/logo_tranparent.png" 
+              src="https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/logo_tranparent.png" 
               alt="Hotel Serene Praia" 
               className="h-24 w-auto object-contain"
             />

@@ -275,7 +275,7 @@ export const Banquet = () => {
                 highlights: ["Ergonomic Chairs", "VIP Green Rooms", "Automated Washrooms"]
               },
               {
-                image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/waiting_hall.JPG', 
+                image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/hall.JPG', 
                 title: "Premium VIP Waiting Lounges", 
                 desc: "Arrive in style and relax before the grand event. Our dedicated waiting halls and VIP green rooms offer a serene, private space for hosts and special guests to prepare and unwind, complete with plush seating and ambient lighting.",
                 highlights: ["Private Lounges", "Plush Seating", "Ambient Lighting"]

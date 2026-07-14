@@ -44,7 +44,7 @@ export const Header = () => {
         <div className="max-w-7xl mx-auto px-6 h-22 flex items-center justify-between">
           <Link to="/" className="relative z-10 flex items-center h-full">
             <img 
-              src="/images/logo/logo_tranparent.png" 
+              src="https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/logo_tranparent.png" 
               alt="Hotel Serene Praia" 
               className="h-16 w-auto object-contain"
             />

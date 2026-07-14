@@ -9,7 +9,7 @@ export const FinalCTA = () => {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full opacity-40">
         <img 
-          src="/images/rooms/executive/poster.png" 
+          src="https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/poster.png" 
           alt="Night View" 
           className="w-full h-full object-cover"
         />

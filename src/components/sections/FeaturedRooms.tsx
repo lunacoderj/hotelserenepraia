@@ -8,7 +8,7 @@ const featuredRooms = [
   {
     id: 'deluxe',
     name: 'Deluxe Room',
-    image: '/images/rooms/deluxe/deluxe_bed.jpeg',
+    image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/deluxe_bed.jpeg',
     price: '₹1,999',
     actualPrice: '₹2,700',
     features: ['Comfortable Stay', 'Smart TV', 'Workspace'],
@@ -16,7 +16,7 @@ const featuredRooms = [
   {
     id: 'suite',
     name: 'Suite Room',
-    image: '/images/rooms/suite/beachview.webp',
+    image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/beachview.webp',
     price: '₹4,399',
     actualPrice: '₹6,500',
     features: ['Separate Living Room', 'Sea View', 'Mini Fridge'],
@@ -24,7 +24,7 @@ const featuredRooms = [
   {
     id: 'executive',
     name: 'Executive Room',
-    image: '/images/rooms/executive/executive_room.jpeg',
+    image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/executive_room.jpeg',
     price: '₹4,499',
     actualPrice: '₹6,500',
     features: ['Executive Bedroom', 'Sea View', 'Premium Bathroom'],

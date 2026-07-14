@@ -4,17 +4,17 @@ import { useLenisScroll } from '../hooks';
 
 const galleryImages = [
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png', span: 'col-span-1 md:col-span-2 row-span-2' },
-  { src: '/images/gallery/reception.JPG', span: 'col-span-1 md:col-span-1 row-span-1' },
-  { src: '/images/gallery/entrance.JPG', span: 'col-span-1 md:col-span-1 row-span-1' },
+  { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/reception.JPG', span: 'col-span-1 md:col-span-1 row-span-1' },
+  { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/entrance.JPG', span: 'col-span-1 md:col-span-1 row-span-1' },
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/beachview.webp', span: 'col-span-1 md:col-span-2 row-span-1' },
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/hero%20image.png', span: 'col-span-1 md:col-span-2 row-span-2' },
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/HERO.png', span: 'col-span-1 md:col-span-1 row-span-1' },
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/washroom.webp', span: 'col-span-1 md:col-span-1 row-span-2' },
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/deluxe_room.jpg', span: 'col-span-1 md:col-span-1 row-span-1' },
-  { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/waiting_hall.JPG', span: 'col-span-1 md:col-span-1 row-span-1' },
+  { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/hall.JPG', span: 'col-span-1 md:col-span-1 row-span-1' },
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/marriage.png', span: 'col-span-1 md:col-span-2 row-span-1' },
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/sofaset.webp', span: 'col-span-1 md:col-span-1 row-span-1' },
-  { src: '/images/gallery/amanaties.JPG', span: 'col-span-1 md:col-span-1 row-span-1' },
+  { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/amanaties.JPG', span: 'col-span-1 md:col-span-1 row-span-1' },
 ];
 
 export const Gallery = () => {
