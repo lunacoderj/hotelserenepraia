@@ -38,7 +38,7 @@ export const FinalCTA = () => {
               <LuxuryButton size="xl" variant="primary">Book via WhatsApp</LuxuryButton>
             </a>
             <a href={`tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}`}>
-              <LuxuryButton size="xl" variant="outline">Call Reservations</LuxuryButton>
+              <LuxuryButton size="xl" variant="primary">Call Reservations</LuxuryButton>
             </a>
           </div>
         </motion.div>

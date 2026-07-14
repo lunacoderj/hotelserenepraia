@@ -23,12 +23,12 @@ export const attractionsData: Attraction[] = [
   },
   {
     id: 'thotlakonda',
-    name: 'Thotlakonda Buddhist Complex',
+    name: 'Thotlakonda Beach',
     distance: '6 km',
     time: '15 mins',
-    description: 'An ancient Buddhist complex perched on a hill overlooking the sea, dating back to 200 BCE. A peaceful retreat for history and architecture enthusiasts.',
+    description: 'A serene and scenic beach offering beautiful views of the Bay of Bengal. Perfect for a peaceful walk and experiencing the calm coastal breeze.',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/Thotlakonda-Beach.png',
-    mapLink: `https://www.google.com/maps/dir/?api=1&origin=${ORIGIN}&destination=${encodeURIComponent('Thotlakonda Buddhist Complex, Visakhapatnam')}`
+    mapLink: 'https://maps.app.goo.gl/YQCg9qW1jc1WPDNX6'
   },
   {
     id: 'bheemili-beach',

@@ -94,7 +94,7 @@ export const LocationMap = () => {
                 <Popup className="font-body text-sm text-navy"><strong>Rushikonda Beach</strong><br/>Famous tourist spot</Popup>
               </Marker>
               <Marker position={[17.8219666, 83.4159344]} icon={thotlakondaIcon}>
-                <Popup className="font-body text-sm text-navy"><strong>Thotlakonda Beach</strong><br/>Ancient Buddhist site & coastal views</Popup>
+                <Popup className="font-body text-sm text-navy"><strong>Thotlakonda Beach</strong><br/>Serene coastal views</Popup>
               </Marker>
             </MapContainer>
           </div>
