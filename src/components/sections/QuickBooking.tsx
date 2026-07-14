@@ -4,10 +4,13 @@ import { LuxuryButton } from '../ui/Button';
 import { CONTACT_CONFIG } from '../../config/contacts';
 
 export const QuickBooking = () => {
-  const [checkIn, setCheckIn] = useState('');
-  const [checkOut, setCheckOut] = useState('');
-  const [guests, setGuests] = useState('1');
-  const [room, setRoom] = useState('all');
+  const today = new Date().toISOString().split('T')[0];
+  const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+  
+  const [checkIn, setCheckIn] = useState(today);
+  const [checkOut, setCheckOut] = useState(tomorrow);
+  const [guests, setGuests] = useState('2');
+  const [room, setRoom] = useState('deluxe');
 
   const handleBooking = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -18,7 +21,7 @@ export const QuickBooking = () => {
       message += `\n\nDates: ${checkIn || 'Any'} to ${checkOut || 'Any'}`;
     }
     
-    const roomName = room === 'all' ? 'Any Room' : `${room.charAt(0).toUpperCase() + room.slice(1)} Room`;
+    const roomName = `${room.charAt(0).toUpperCase() + room.slice(1)} Room`;
     message += `\nGuests: ${guests}`;
     message += `\nPreference: ${roomName}`;
     
@@ -46,7 +49,7 @@ export const QuickBooking = () => {
                 type="date" 
                 value={checkIn}
                 onChange={(e) => setCheckIn(e.target.value)}
-                className="bg-transparent text-body-sm text-pearl outline-none" 
+                className="bg-transparent text-body-sm text-pearl outline-none [color-scheme:dark]" 
               />
             </div>
             <div className="flex flex-col gap-1 md:border-r border-white/10 pr-4">
@@ -55,7 +58,7 @@ export const QuickBooking = () => {
                 type="date" 
                 value={checkOut}
                 onChange={(e) => setCheckOut(e.target.value)}
-                className="bg-transparent text-body-sm text-pearl outline-none" 
+                className="bg-transparent text-body-sm text-pearl outline-none [color-scheme:dark]" 
               />
             </div>
             <div className="flex flex-col gap-1 border-r border-white/10 pr-4">
@@ -65,10 +68,9 @@ export const QuickBooking = () => {
                 onChange={(e) => setGuests(e.target.value)}
                 className="bg-transparent text-body-sm text-pearl outline-none appearance-none cursor-pointer"
               >
-                <option value="1" className="text-navy">1 Guest</option>
                 <option value="2" className="text-navy">2 Guests</option>
                 <option value="3" className="text-navy">3 Guests</option>
-                <option value="4" className="text-navy">4+ Guests</option>
+                <option value="4" className="text-navy">4 Guests</option>
               </select>
             </div>
             <div className="flex flex-col gap-1 pr-4">
@@ -78,7 +80,6 @@ export const QuickBooking = () => {
                 onChange={(e) => setRoom(e.target.value)}
                 className="bg-transparent text-body-sm text-pearl outline-none appearance-none cursor-pointer"
               >
-                <option value="all" className="text-navy">All Rooms</option>
                 <option value="deluxe" className="text-navy">Deluxe Room</option>
                 <option value="premium" className="text-navy">Premium Room</option>
                 <option value="suite" className="text-navy">Suite Room</option>
