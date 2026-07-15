@@ -5,7 +5,7 @@ const amenities = [
   { icon: '🌊', title: 'Beach Proximity', desc: 'Located beautifully near the pristine beach.' },
   { icon: '📶', title: 'High-Speed Wi-Fi', desc: 'Complimentary high-speed internet across the property.' },
   { icon: '❄️', title: 'Air-Conditioned', desc: 'Fully air-conditioned rooms for your comfort.' },
-  { icon: '🛎️', title: 'Professional Hospitality', desc: 'Dedicated staff ensuring a perfect stay.' },
+  { icon: '☕', title: 'Coffee & Tea', desc: 'Complimentary coffee and tea amenities provided in every room.' },
   { icon: '🛋️', title: 'Waiting Lounge', desc: 'Comfortable reception and waiting areas.' },
   { icon: '🛁', title: 'Modern Bathrooms', desc: 'Premium, hygienic, and modern attached bathrooms.' },
 ];

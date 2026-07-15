@@ -75,18 +75,5 @@ export const attractionsData: Attraction[] = [
     description: 'A scenic, palm-fringed stretch along the coast known for its luxury vibe and tranquil sea breeze. Ideal for a relaxing drive or seaside dining.',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/plam-beach.png',
     mapLink: `https://www.google.com/maps/dir/?api=1&origin=${ORIGIN}&destination=${encodeURIComponent('Palm Beach, Visakhapatnam')}`
-  },
-  {
-    id: 'temples-of-vizag',
-    name: 'Sacred Temples of Vizag',
-    distance: 'Variable',
-    time: 'Flexible',
-    description: 'Discover the spiritual side of Visakhapatnam by visiting ancient and beautifully crafted temples including ISKCON, Rushikonda Venkateswara Swami Temple, and the historic Simhachalam.',
-    image: [
-      'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/iskcon.png',
-      'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/rushikonda%20Venkateswara%20swami%20temple.png',
-      'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/simhachalam.png'
-    ],
-    mapLink: `https://www.google.com/maps/dir/?api=1&origin=${ORIGIN}&destination=${encodeURIComponent('Simhachalam Temple, Visakhapatnam')}`
   }
 ];

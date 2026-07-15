@@ -26,7 +26,7 @@ const OFFERS = [
     label: 'Executive',
     tagline: 'Executive stay + sea view',
     actual: 6500,
-    offer: 4499,
+    offer: 4099,
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/poster.png',
   },
   {
@@ -34,7 +34,7 @@ const OFFERS = [
     label: 'Suite',
     tagline: '2 rooms, living area + sea view',
     actual: 6500,
-    offer: 5999,
+    offer: 4499,
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/beachview.webp',
   },
   {

@@ -74,7 +74,7 @@ export const About = () => {
         >
           <div className="flex items-center gap-4 mb-4 md:mb-6">
             <div className="w-8 md:w-12 h-[1px] bg-gold" />
-            <span className="font-body text-[10px] md:text-caption tracking-[0.2em] uppercase text-gold">The Serene Experience</span>
+            <span className="font-body text-[10px] md:text-caption tracking-[0.2em] uppercase text-gold">Hotel Serene Praia Rooms & Banquet Halls</span>
           </div>
           
           <h2 className="font-display text-heading-lg sm:text-heading-xl md:text-[3.5rem] text-pearl leading-[1.1] mb-4 md:mb-6">

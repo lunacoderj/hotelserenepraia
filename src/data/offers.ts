@@ -37,7 +37,7 @@ export const offersData: Offer[] = [
     description: 'Indulge in spacious elegance. Our Suite Room offers a separate living area and breathtaking sea views.',
     validUntil: targetDateString,
     actualPrice: 6500,
-    offerPrice: 5999,
+    offerPrice: 4499,
     features: ['2 Rooms', 'Living Area & Sofa', 'Mini Fridge', 'Electric Kettle', 'Sea View'],
     terms: ['Valid for bookings made before the timer expires.', 'Subject to availability.', 'Non-refundable.'],
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/beachview.webp'
@@ -49,7 +49,7 @@ export const offersData: Offer[] = [
     description: 'The pinnacle of luxury. Breathtaking views and premium amenities await in our Executive Room.',
     validUntil: targetDateString,
     actualPrice: 6500,
-    offerPrice: 4499,
+    offerPrice: 4099,
     features: ['Premium Executive Stay', 'Mini Fridge', 'Electric Kettle', 'Sea View', 'Premium Bathroom'],
     terms: ['Valid for bookings made before the timer expires.', 'Subject to availability.', 'Non-refundable.'],
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/poster.png'

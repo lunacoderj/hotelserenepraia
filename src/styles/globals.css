@@ -10,3 +10,17 @@
     @apply antialiased text-navy bg-pearl;
   }
 }
+
+/* Google Translate Overrides */
+.goog-te-banner-frame {
+  display: none !important;
+}
+.skiptranslate > iframe {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+#google_translate_element {
+  display: none !important;
+}

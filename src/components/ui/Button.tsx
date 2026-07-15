@@ -35,7 +35,7 @@ export const LuxuryButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const variants = {
       primary: 'bg-gold hover:bg-gold-600 text-navy-700 shadow-luxury',
       secondary: 'bg-navy-600 hover:bg-navy-500 text-pearl shadow-inner-light',
-      outline: 'border border-gold text-gold hover:bg-gold/10',
+      outline: 'bg-gold text-navy-700 md:bg-transparent md:border md:border-gold md:text-gold md:hover:bg-gold/10',
       ghost: 'text-navy-500 hover:text-gold hover:bg-gold/5',
     };
 

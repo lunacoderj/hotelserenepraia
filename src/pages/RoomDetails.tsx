@@ -377,7 +377,7 @@ export const RoomDetails = () => {
             <div className="space-y-4 mb-8">
               <div className="flex justify-between py-3 border-b border-navy/5">
                 <span className="text-navy-500">Check-in</span>
-                <span className="font-medium text-navy">2:00 PM</span>
+                <span className="font-medium text-navy">12:00 PM</span>
               </div>
               <div className="flex justify-between py-3 border-b border-navy/5">
                 <span className="text-navy-500">Check-out</span>
@@ -393,9 +393,26 @@ export const RoomDetails = () => {
               <LuxuryButton variant="primary" className="w-full">Reserve on WhatsApp</LuxuryButton>
             </a>
             
-            <p className="text-center text-[10px] uppercase tracking-widest text-navy-500/40 mt-4">
+            <p className="text-center text-[10px] uppercase tracking-widest text-navy-500/40 mt-4 mb-6">
               Best Rate Guarantee
             </p>
+
+            <div className="p-4 bg-navy/5 border border-navy/10 rounded-sm">
+              <p className="text-body-sm text-navy mb-3 flex items-start gap-2">
+                <span className="text-gold mt-1 text-xs">◆</span> 
+                <span>Offer price is for <strong>2 adults and 1 child</strong>.</span>
+              </p>
+              <p className="text-body-sm text-navy mb-3 flex items-start gap-2">
+                <span className="text-gold mt-1 text-xs">◆</span> 
+                <span>Need extra beds or more persons? Customizations available! <a href={`tel:${CONTACT_CONFIG.phone}`} className="text-gold underline hover:text-gold-600 font-medium">Contact us now</a>.</span>
+              </p>
+              <div className="bg-gold/10 p-2.5 rounded border border-gold/30 mt-4">
+                <p className="text-body-sm text-navy font-medium flex items-start gap-2">
+                  <span className="text-gold mt-0.5">🍳</span> 
+                  <span><strong className="text-gold-600">Breakfast</strong> is provided for just <strong>₹199</strong> only!</span>
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
 

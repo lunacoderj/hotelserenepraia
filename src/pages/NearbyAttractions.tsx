@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useLenisScroll } from '../hooks';
 import { attractionsData } from '../data/attractions';
 import { LuxuryButton } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { AdventuresCarousel } from '../components/sections/AdventuresCarousel';
+import { TemplesCarousel } from '../components/sections/TemplesCarousel';
 
 export const NearbyAttractions = () => {
   useLenisScroll();
@@ -18,6 +20,11 @@ export const NearbyAttractions = () => {
 
   return (
     <div className="bg-navy min-h-screen text-pearl selection:bg-gold selection:text-navy">
+      <Helmet>
+        <title>Tourist Attractions Near Hotel Serene Praia | Vizag</title>
+        <meta name="description" content="Discover the best places to visit near Rushikonda, Vizag. From adventure sports to sacred temples and scenic beaches, plan your perfect itinerary with Hotel Serene Praia." />
+        <meta name="keywords" content="Adventure places near Rushikonda Vizag, Rushikonda beach water sports stay, Hotels near scuba diving in Vizag, Paramotoring Rushikonda beach accommodation, AP Tourism Boating Rushikonda nearby hotels, Hotels near Thotlakonda Buddhist Archaeological Site, Places to visit near Pedda Rushikonda, Stays near Shilparamam Jathara Park Vizag, Hotels near Indira Gandhi Zoological Park" />
+      </Helmet>
       
       {/* ─── CINEMATIC HERO ─── */}
       <section ref={heroRef} className="relative h-screen w-full bg-navy overflow-hidden">
@@ -64,6 +71,7 @@ export const NearbyAttractions = () => {
 
       {/* ─── STACKING CARDS SHOWCASE ─── */}
       <AdventuresCarousel onRouteSelect={setSelectedRoute} />
+      <TemplesCarousel onRouteSelect={setSelectedRoute} />
       <section className="relative w-full max-w-[1400px] mx-auto px-4 md:px-8 pt-24 pb-64">
         <div className="text-center mb-24">
           <motion.h2 
@@ -129,18 +137,39 @@ export const NearbyAttractions = () => {
                 </p>
               </div>
 
-              <div className="w-full md:w-auto flex-shrink-0">
-                <button 
-                  onClick={() => setSelectedRoute({ name: attraction.name, dest: attraction.name + ', Visakhapatnam' })}
-                  className="relative overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 px-8 py-5 rounded-sm flex items-center gap-4 group/btn hover:border-gold transition-all duration-500 w-full justify-center md:w-auto"
-                >
-                  <span className="relative z-10 font-body text-caption uppercase tracking-widest text-pearl group-hover/btn:text-navy transition-colors font-medium">Get Directions</span>
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative z-10 text-gold group-hover/btn:text-navy transition-colors">
-                    <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  {/* Hover fill effect */}
-                  <div className="absolute inset-0 bg-gold transform scale-y-0 group-hover/btn:scale-y-100 origin-bottom transition-transform duration-500 ease-out" />
-                </button>
+              <div className="w-full md:w-auto flex-shrink-0 flex flex-col gap-3">
+                {attraction.subItems ? (
+                  attraction.subItems.map((sub, idx) => (
+                    <a 
+                      key={idx}
+                      href={sub.mapLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="relative overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 px-6 py-3 rounded-sm flex items-center justify-between gap-4 group/btn hover:border-gold transition-all duration-500 w-full"
+                    >
+                      <span className="relative z-10 font-body text-[10px] md:text-xs uppercase tracking-widest text-pearl group-hover/btn:text-navy transition-colors font-medium text-left">
+                        {sub.name} Directions
+                      </span>
+                      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative z-10 text-gold group-hover/btn:text-navy transition-colors shrink-0">
+                        <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      {/* Hover fill effect */}
+                      <div className="absolute inset-0 bg-gold transform scale-y-0 group-hover/btn:scale-y-100 origin-bottom transition-transform duration-500 ease-out" />
+                    </a>
+                  ))
+                ) : (
+                  <button 
+                    onClick={() => setSelectedRoute({ name: attraction.name, dest: attraction.name + ', Visakhapatnam' })}
+                    className="relative overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 px-8 py-5 rounded-sm flex items-center gap-4 group/btn hover:border-gold transition-all duration-500 w-full justify-center md:w-auto"
+                  >
+                    <span className="relative z-10 font-body text-caption uppercase tracking-widest text-pearl group-hover/btn:text-navy transition-colors font-medium">Get Directions</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative z-10 text-gold group-hover/btn:text-navy transition-colors">
+                      <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    {/* Hover fill effect */}
+                    <div className="absolute inset-0 bg-gold transform scale-y-0 group-hover/btn:scale-y-100 origin-bottom transition-transform duration-500 ease-out" />
+                  </button>
+                )}
               </div>
             </div>
           </div>

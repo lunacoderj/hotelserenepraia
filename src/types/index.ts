@@ -46,4 +46,5 @@ export interface Attraction {
   description: string
   image: string | string[]
   mapLink: string
+  subItems?: { name: string; mapLink: string }[]
 }

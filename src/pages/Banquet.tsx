@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLenisScroll } from '../hooks';
 import { LuxuryButton } from '../components/ui/Button';
@@ -25,6 +26,11 @@ export const Banquet = () => {
 
   return (
     <div className="bg-pearl min-h-screen">
+      <Helmet>
+        <title>Premium Banquet Halls in Rushikonda | Hotel Serene Praia Vizag</title>
+        <meta name="description" content="Host your next event at the best hotel with banquet near Rushikonda. Perfect for weddings, corporate meets, and parties. AC banquet hall in Pedda Rushikonda." />
+        <meta name="keywords" content="Banquet halls in Rushikonda Visakhapatnam, Best hotel with banquet near Rushikonda, AC banquet hall in Pedda Rushikonda, Small party halls near Rushikonda beach, Event spaces in Vizag near IT SEZ, Mini banquet halls for corporate meets in Vizag" />
+      </Helmet>
 
       {/* ─── CINEMATIC PARALLAX HERO ─── */}
       <section ref={heroRef} className="relative h-[110vh] w-full bg-navy overflow-hidden">
@@ -242,6 +248,7 @@ export const Banquet = () => {
                 </div>
               </div>
               <p className="font-body text-pearl/40 text-xs tracking-widest uppercase mt-6">Starting from ₹22,999</p>
+              <p className="font-body text-pearl font-bold text-[9px] tracking-[0.2em] uppercase mt-3 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm shadow-sm inline-block">* Current & other charges are included!</p>
             </div>
           </div>
         </motion.div>

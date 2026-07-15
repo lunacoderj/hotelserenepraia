@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { LuxuryButton } from '../ui/Button';
 import { CONTACT_CONFIG } from '../../config/contacts';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -66,6 +67,7 @@ export const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
+            <LanguageSwitcher />
             <Link to="/contact" onClick={() => { setTimeout(() => { const el = document.getElementById('book'); if(el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); }}>
               <LuxuryButton variant="primary" size="sm">Book Now</LuxuryButton>
             </Link>
@@ -112,7 +114,15 @@ export const Header = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.1, duration: 0.5 }}
-                className="mt-8 flex flex-col gap-4 w-64"
+                className="mt-4"
+              >
+                <LanguageSwitcher />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (navLinks.length + 1) * 0.1, duration: 0.5 }}
+                className="mt-4 flex flex-col gap-4 w-64"
               >
                 <Link to="/contact" className="w-full" onClick={() => { setIsMobileMenuOpen(false); setTimeout(() => { const el = document.getElementById('book'); if(el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); }}>
                   <LuxuryButton variant="primary" className="w-full">Book Now</LuxuryButton>

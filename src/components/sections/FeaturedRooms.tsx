@@ -17,7 +17,7 @@ const featuredRooms = [
     id: 'suite',
     name: 'Suite Room',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/beachview.webp',
-    price: '₹4,399',
+    price: '₹4,499',
     actualPrice: '₹6,500',
     features: ['Separate Living Room', 'Sea View', 'Mini Fridge'],
   },
@@ -25,7 +25,7 @@ const featuredRooms = [
     id: 'executive',
     name: 'Executive Room',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/executive_room.jpeg',
-    price: '₹4,499',
+    price: '₹4,099',
     actualPrice: '₹6,500',
     features: ['Executive Bedroom', 'Sea View', 'Premium Bathroom'],
   }
