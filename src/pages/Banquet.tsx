@@ -219,7 +219,7 @@ export const Banquet = () => {
                 Book your event 30 days in advance and receive a <strong className="text-gold font-semibold">15% discount</strong> on our premium catering packages.
               </p>
               <ul className="space-y-3 mb-8">
-                {["15% off premium catering menu", "Free stage & podium decoration", "Priority valet parking for VIP guests"].map((item, i) => (
+                {["15% off premium catering menu", "Free stage & Projection", "Priority valet parking for VIP guests"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 font-body text-body-sm text-pearl/70">
                     <span className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0" />
                     {item}

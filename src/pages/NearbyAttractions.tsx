@@ -7,6 +7,7 @@ import { LuxuryButton } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
 import { AdventuresCarousel } from '../components/sections/AdventuresCarousel';
 import { TemplesCarousel } from '../components/sections/TemplesCarousel';
+import { RestaurantsCarousel } from '../components/sections/RestaurantsCarousel';
 
 export const NearbyAttractions = () => {
   useLenisScroll();
@@ -72,6 +73,7 @@ export const NearbyAttractions = () => {
       {/* ─── STACKING CARDS SHOWCASE ─── */}
       <AdventuresCarousel onRouteSelect={setSelectedRoute} />
       <TemplesCarousel onRouteSelect={setSelectedRoute} />
+      <RestaurantsCarousel onRouteSelect={setSelectedRoute} />
       <section className="relative w-full max-w-[1400px] mx-auto px-4 md:px-8 pt-24 pb-64">
         <div className="text-center mb-24">
           <motion.h2 
