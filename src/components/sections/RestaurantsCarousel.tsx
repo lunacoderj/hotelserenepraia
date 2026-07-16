@@ -27,7 +27,7 @@ const restaurantsData = [
     id: 'bean-board',
     name: 'Bean-Board',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/bean-board.png',
-    mapLink: 'https://share.google/A4xkImpQkOVIOsDEa'
+    mapLink: 'https://maps.app.goo.gl/LDUxQaK7sEYNbdH49'
   },
   {
     id: 'gatox',
