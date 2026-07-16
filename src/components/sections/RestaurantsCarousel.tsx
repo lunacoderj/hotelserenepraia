@@ -27,7 +27,8 @@ const restaurantsData = [
     id: 'bean-board',
     name: 'Bean-Board',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/bean-board.png',
-    mapLink: 'https://maps.app.goo.gl/LDUxQaK7sEYNbdH49'
+    mapLink: 'https://maps.app.goo.gl/LDUxQaK7sEYNbdH49',
+    mapQuery: 'Bean Board Yendada, Visakhapatnam'
   },
   {
     id: 'gatox',
@@ -106,7 +107,7 @@ export const RestaurantsCarousel = ({ onRouteSelect }: { onRouteSelect?: (route:
                 <div className="absolute bottom-0 left-0 p-8 w-full z-10 flex flex-col justify-end">
                   <h3 className="font-display text-heading-md text-pearl mb-4">{restaurant.name}</h3>
                   <button 
-                    onClick={() => onRouteSelect?.({ name: restaurant.name, dest: restaurant.name + ', Visakhapatnam' })}
+                    onClick={() => onRouteSelect?.({ name: restaurant.name, dest: restaurant.mapQuery || (restaurant.name + ', Visakhapatnam') })}
                     className="flex items-center gap-3 text-gold uppercase tracking-widest font-body text-[11px] hover:text-white transition-colors duration-300 w-max bg-white/10 px-4 py-2 rounded backdrop-blur-sm border border-white/10"
                   >
                     <span>Get Directions</span>
