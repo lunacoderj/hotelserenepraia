@@ -14,7 +14,7 @@ const portals = [
   {
     title: 'Exclusive Offers',
     subtitle: 'Offers',
-    link: '/offers',
+    link: '/claim-offer/deluxe',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/poster.png',
     size: 'lg:col-span-4 lg:row-span-1',
     height: 'h-[400px]',

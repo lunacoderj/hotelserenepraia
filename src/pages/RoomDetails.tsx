@@ -92,7 +92,7 @@ export const RoomDetails = () => {
               className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-xs md:text-body-sm uppercase tracking-widest text-pearl/90 font-medium bg-white/5 backdrop-blur-xl border border-white/10 py-4 px-6 md:px-10 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]"
             >
               <span className="flex items-center gap-2 md:gap-3"><span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-gold shadow-[0_0_8px_rgba(212,175,55,0.8)]" /> {room.size}</span>
-              <span className="flex items-center gap-2 md:gap-3"><span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-gold shadow-[0_0_8px_rgba(212,175,55,0.8)]" /> Up to {room.capacity} Guests</span>
+              <span className="flex items-center gap-2 md:gap-3"><span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-gold shadow-[0_0_8px_rgba(212,175,55,0.8)]" /> 2 Adults + 1 Child</span>
               <span className="flex items-center gap-2 md:gap-3"><span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-gold shadow-[0_0_8px_rgba(212,175,55,0.8)]" /> {room.bedType}</span>
             </motion.div>
           </div>
@@ -156,7 +156,7 @@ export const RoomDetails = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-gold" /> {typeof room.size === 'number' ? `${room.size} sq.ft` : room.size}
                 </div>
                 <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded border border-white/10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold" /> Up to {room.capacity} Guests
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold" /> 2 Adults + 1 Child
                 </div>
               </div>
             </motion.div>
@@ -215,7 +215,7 @@ export const RoomDetails = () => {
               
               <div className="flex flex-wrap gap-4 md:gap-8 text-xs md:text-body-sm uppercase tracking-widest text-pearl font-medium bg-black/20 backdrop-blur-md border border-white/10 py-3 px-6 rounded-full w-fit">
                 <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" /> {typeof room.size === 'number' ? `${room.size} sq.ft` : room.size}</span>
-                <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" /> Up to {room.capacity} Guests</span>
+                <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" /> 2 Adults + 1 Child</span>
                 <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" /> {room.bedType}</span>
               </div>
             </motion.div>
@@ -409,7 +409,7 @@ export const RoomDetails = () => {
               <div className="bg-gold/10 p-2.5 rounded border border-gold/30 mt-4">
                 <p className="text-body-sm text-navy font-medium flex items-start gap-2">
                   <span className="text-gold mt-0.5">🍳</span> 
-                  <span><strong className="text-gold-600">Breakfast</strong> is provided for just <strong>₹199</strong> only!</span>
+                  <span><strong className="text-gold-600">Breakfast</strong> is provided for just <strong>₹299</strong> only!</span>
                 </p>
               </div>
             </div>

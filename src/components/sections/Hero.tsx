@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { LuxuryButton } from '../ui/Button';
 import { CONTACT_CONFIG } from '../../config/contacts';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -62,11 +63,11 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 sm:gap-6"
         >
-          <a href={`https://wa.me/${CONTACT_CONFIG.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noreferrer">
+          <Link to="/rooms">
             <LuxuryButton size="lg" variant="primary">Book Your Stay</LuxuryButton>
-          </a>
+          </Link>
           <a href="#about">
-            <LuxuryButton size="lg" variant="outline">Explore Resort</LuxuryButton>
+            <LuxuryButton size="lg" variant="outline">Explore Hotel</LuxuryButton>
           </a>
         </motion.div>
       </motion.div>

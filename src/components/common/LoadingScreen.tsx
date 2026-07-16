@@ -33,7 +33,7 @@ export const LoadingScreen = ({ isLoading }: { isLoading: boolean }) => {
               />
             </div>
             <p className="mt-6 font-body text-caption tracking-[0.3em] uppercase text-pearl/70">
-              Hotel & Resort
+              Hotel & Banquets
             </p>
           </motion.div>
         </motion.div>

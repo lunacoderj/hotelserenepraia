@@ -1,7 +1,7 @@
 export const SEO_CONFIG = {
-  title: 'Hotel Serene Praia | Luxury Beach Resort in Visakhapatnam',
-  description: 'Experience luxury at Hotel Serene Praia, Rushikonda. Premium rooms, world-class dining, and unforgettable coastal experiences.',
-  keywords: ['luxury resort', 'beach hotel', 'coastal', 'visakhapatnam', 'rushikonda'],
+  title: 'Hotel Serene Praia | Luxury Beach Hotel in Visakhapatnam',
+  description: 'Experience unparalleled luxury at Hotel Serene Praia, Visakhapatnam. Offering breathtaking sea views, premium rooms, grand banquet halls, and world-class coastal hospitality.',
+  keywords: ['luxury hotel', 'beach hotel', 'coastal', 'visakhapatnam', 'rushikonda'],
   ogImage: '/images/hero/hero-main.jpg',
   ogUrl: 'https://hotelserenepraia.in/'
 } as const

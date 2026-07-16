@@ -98,7 +98,7 @@ export const ClaimOffer = () => {
     setPhase('success');
     
     setTimeout(() => {
-      const text = `Hello Hotel Serene Praia,\n\nI would like to claim the Instagram Exclusive Offer.\n\nRoom: ${offer.title}\n\nName: ${formData.name}\nPhone: ${formData.phone}\nGuests: ${formData.adults} Adults, ${formData.children} Children\nRooms: ${formData.rooms}\nCheck-in: ${formData.checkIn}\nCheck-out: ${formData.checkOut}\nArrival Time: ${formData.arrivalTime}\nSpecial Request: ${formData.specialRequest || 'None'}\n\nPlease confirm availability.\n\nThank you.`;
+      const text = `Hello Hotel Serene Praia,\n\nI would like to claim the Instagram Exclusive Offer.\n\nRoom: ${offer.title}\n\nName: ${formData.name}\nPhone: ${formData.phone}\nGuests: 2 Adults + 1 Child\nRooms: 1\nCheck-in: ${formData.checkIn}\nCheck-out: ${formData.checkOut}\nArrival Time: ${formData.arrivalTime}\nSpecial Request: ${formData.specialRequest || 'None'}\n\nPlease confirm availability.\n\nThank you.`;
       const whatsappUrl = `https://wa.me/${CONTACT_CONFIG.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(text)}`;
       window.location.href = whatsappUrl;
     }, 2500);
@@ -259,17 +259,15 @@ export const ClaimOffer = () => {
                         <label className="text-xs uppercase tracking-widest text-white/50 mb-1 block">Check-out</label>
                         <input required type="date" name="checkOut" onChange={handleInputChange} className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold/50 transition-colors [color-scheme:dark]" />
                       </div>
-                      <div>
-                        <label className="text-xs uppercase tracking-widest text-white/50 mb-1 block">Adults</label>
-                        <select name="adults" onChange={handleInputChange} value={formData.adults} className="w-full bg-[#1A1F29] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold/50 transition-colors">
-                          {[1,2,3,4,5].map(n => <option key={n} value={n}>{n}</option>)}
-                        </select>
-                      </div>
-                      <div>
-                        <label className="text-xs uppercase tracking-widest text-white/50 mb-1 block">Rooms</label>
-                        <select name="rooms" onChange={handleInputChange} value={formData.rooms} className="w-full bg-[#1A1F29] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold/50 transition-colors">
-                          {[1,2,3,4].map(n => <option key={n} value={n}>{n}</option>)}
-                        </select>
+                      <div className="col-span-2 mt-2">
+                        <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                          <p className="font-body text-sm text-pearl mb-1">
+                            <strong className="text-gold">Capacity:</strong> 2 Adults + 1 Child | 1 Room
+                          </p>
+                          <p className="font-body text-[10px] uppercase tracking-widest text-white/50 leading-relaxed">
+                            * Extra persons or extra rooms can be provided if needed. Please contact us first.
+                          </p>
+                        </div>
                       </div>
                     </div>
 
@@ -277,12 +275,12 @@ export const ClaimOffer = () => {
                     <div className="mt-6 p-4 rounded-xl bg-gold/10 border border-gold/20 flex flex-wrap justify-between items-center gap-4">
                       <div>
                         <p className="text-[10px] uppercase tracking-widest text-gold/70">Total Summary</p>
-                        <p className="font-display text-lg">{formData.rooms}x {offer.title}</p>
-                        <p className="text-xs text-white/70">{formData.adults} Guests • {nights} Nights</p>
+                        <p className="font-display text-lg">1x {offer.title}</p>
+                        <p className="text-xs text-white/70">2 Adults + 1 Child • {nights} Nights</p>
                       </div>
                       <div className="text-right">
                         <p className="text-[10px] uppercase tracking-widest text-gold/70">Total Rate / Night</p>
-                        <p className="font-display text-2xl text-gold">₹{offer.offerPrice * Number(formData.rooms)}</p>
+                        <p className="font-display text-2xl text-gold">₹{offer.offerPrice}</p>
                       </div>
                     </div>
 

@@ -67,8 +67,8 @@ export const Rooms = () => {
                 <div className="p-8 md:p-10 flex flex-col flex-grow bg-white relative z-10 -mt-4 mx-4 shadow-luxury">
                   <div className="flex justify-between items-end mb-4">
                     <h3 className="font-display text-heading-lg text-navy">{room.name}</h3>
-                    <div className="flex gap-4 text-caption uppercase tracking-widest text-navy-500/50 font-body">
-                      <span>{room.capacity} Guests</span>
+                    <div className="flex gap-4 text-caption uppercase tracking-widest text-navy-500/50 font-body text-right">
+                      <span>2 Adults + 1 Child</span>
                     </div>
                   </div>
                   

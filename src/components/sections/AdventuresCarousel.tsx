@@ -68,15 +68,15 @@ export const AdventuresCarousel = ({ onRouteSelect }: { onRouteSelect?: (route: 
         {/* Navigation Arrows */}
         <button 
           onClick={() => scroll('left')}
-          className="hidden md:flex absolute left-2 top-[60%] -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full items-center justify-center text-pearl shadow-xl border border-white/5 hover:bg-gold hover:text-navy transition-all z-20 opacity-0 group-hover/section:opacity-100 disabled:opacity-0"
+          className="flex absolute left-2 md:left-4 top-[55%] md:top-[60%] -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-navy/50 md:bg-white/10 backdrop-blur-md rounded-full items-center justify-center text-pearl shadow-xl border border-white/10 hover:bg-gold hover:text-navy transition-all z-20 opacity-100 lg:opacity-0 lg:group-hover/section:opacity-100 disabled:opacity-0"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
         </button>
         <button 
           onClick={() => scroll('right')}
-          className="hidden md:flex absolute right-2 top-[60%] -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full items-center justify-center text-pearl shadow-xl border border-white/5 hover:bg-gold hover:text-navy transition-all z-20 opacity-0 group-hover/section:opacity-100 disabled:opacity-0"
+          className="flex absolute right-2 md:right-4 top-[55%] md:top-[60%] -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-navy/50 md:bg-white/10 backdrop-blur-md rounded-full items-center justify-center text-pearl shadow-xl border border-white/10 hover:bg-gold hover:text-navy transition-all z-20 opacity-100 lg:opacity-0 lg:group-hover/section:opacity-100 disabled:opacity-0"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
         </button>
 
         {/* Carousel */}

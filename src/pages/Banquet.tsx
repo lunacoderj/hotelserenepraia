@@ -70,7 +70,7 @@ export const Banquet = () => {
               >
                 <LuxuryButton variant="primary" size="lg">Book Your Event</LuxuryButton>
               </a>
-              <Link to="/offers">
+              <Link to="/claim-offer/banquet">
                 <LuxuryButton variant="outline" size="lg">View Offers</LuxuryButton>
               </Link>
             </div>
@@ -216,10 +216,10 @@ export const Banquet = () => {
                 The Grand <br className="hidden md:block" />Celebration Package
               </h3>
               <p className="font-body text-body-lg text-pearl/80 mb-6 leading-relaxed font-light">
-                Book your event 30 days in advance and receive a complimentary welcome drink reception for all guests, plus a <strong className="text-gold font-semibold">15% discount</strong> on our premium catering packages.
+                Book your event 30 days in advance and receive a <strong className="text-gold font-semibold">15% discount</strong> on our premium catering packages.
               </p>
               <ul className="space-y-3 mb-8">
-                {["Complimentary welcome drinks & appetizers", "15% off premium catering menu", "Free stage & podium decoration", "Priority valet parking for VIP guests"].map((item, i) => (
+                {["15% off premium catering menu", "Free stage & podium decoration", "Priority valet parking for VIP guests"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 font-body text-body-sm text-pearl/70">
                     <span className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0" />
                     {item}
@@ -228,7 +228,7 @@ export const Banquet = () => {
               </ul>
               <p className="font-body text-xs text-pearl/40 italic mb-8">* Valid for bookings of 100+ guests. Terms and conditions apply.</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/offers">
+                <Link to="/claim-offer/banquet">
                   <LuxuryButton variant="primary" size="lg">Claim Offer</LuxuryButton>
                 </Link>
                 <a 
@@ -248,7 +248,7 @@ export const Banquet = () => {
                 </div>
               </div>
               <p className="font-body text-pearl/40 text-xs tracking-widest uppercase mt-6">Starting from ₹22,999</p>
-              <p className="font-body text-pearl font-bold text-[9px] tracking-[0.2em] uppercase mt-3 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm shadow-sm inline-block">* Current & other charges are included!</p>
+              <p className="font-body text-pearl font-bold text-[9px] tracking-[0.2em] uppercase mt-3 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm shadow-sm inline-block">* Current & other charges are <span className="text-gold underline">not included!</span></p>
             </div>
           </div>
         </motion.div>

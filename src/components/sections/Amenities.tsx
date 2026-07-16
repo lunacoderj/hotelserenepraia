@@ -23,7 +23,7 @@ export const Amenities = () => {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-8 h-[1px] bg-gold" />
-            <span className="font-body text-caption tracking-[0.2em] uppercase text-gold">Resort Features</span>
+            <span className="font-body text-caption tracking-[0.2em] uppercase text-gold">Hotel Features</span>
             <div className="w-8 h-[1px] bg-gold" />
           </div>
           <h2 className="font-display text-heading-xl text-navy">Curated Amenities</h2>

@@ -68,7 +68,7 @@ export const QuickBooking = () => {
   
   const [checkIn, setCheckIn] = useState(today);
   const [checkOut, setCheckOut] = useState(tomorrow);
-  const [guests, setGuests] = useState('2');
+  const [guests, setGuests] = useState('2 Adults + 1 Child');
   const [room, setRoom] = useState('deluxe');
 
   const handleBooking = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -91,9 +91,8 @@ export const QuickBooking = () => {
   };
 
   const guestOptions = [
-    { value: '2', label: '2 Guests' },
-    { value: '3', label: '3 Guests' },
-    { value: '4', label: '4 Guests' },
+    { value: '2 Adults + 1 Child', label: '2 Adults + 1 Child' },
+    { value: 'Custom (Contact Us)', label: 'Custom (Contact Us)' },
   ];
 
   const roomOptions = [

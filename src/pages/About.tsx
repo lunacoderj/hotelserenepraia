@@ -95,7 +95,7 @@ export const About = () => {
             {[
               {
                 title: "Coastal Harmony",
-                desc: "Every inch of our resort is designed to harmonize with the rhythmic waves of the Bay of Bengal, offering uninterrupted panoramic views and an atmosphere of profound peace."
+                desc: "Every inch of our hotel is designed to harmonize with the rhythmic waves of the Bay of Bengal, offering uninterrupted panoramic views and an atmosphere of profound peace."
               },
               {
                 title: "Bespoke Hospitality",

@@ -91,6 +91,10 @@ export const About = () => {
               <span className="font-body text-[8px] sm:text-[10px] uppercase tracking-widest text-pearl/60">Luxury Categories</span>
             </div>
             <div>
+              <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">21<span className="text-gold">+</span></span>
+              <span className="font-body text-[8px] sm:text-[10px] uppercase tracking-widest text-pearl/60">Rooms</span>
+            </div>
+            <div>
               <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">5<span className="text-gold">★★★★★</span></span>
               <span className="font-body text-[8px] sm:text-[10px] uppercase tracking-widest text-pearl/60">Service Quality</span>
             </div>
