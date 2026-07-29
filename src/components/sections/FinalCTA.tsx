@@ -10,8 +10,9 @@ export const FinalCTA = () => {
       <div className="absolute inset-0 w-full h-full opacity-40">
         <img 
           src="https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/poster.png" 
-          alt="Night View" 
+          alt="Hotel Serene Praia at night — Luxury stay in Visakhapatnam" 
           className="w-full h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-transparent" />
       </div>
@@ -34,10 +35,10 @@ export const FinalCTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <a href={`https://wa.me/${CONTACT_CONFIG.whatsapp.replace(/[^0-9]/g, '')}?text=I would like to book a stay at Hotel Serene Praia.`} target="_blank" rel="noreferrer">
+            <a href={`https://wa.me/${CONTACT_CONFIG.whatsapp.replace(/[^0-9]/g, '')}?text=I would like to book a stay at Hotel Serene Praia.`} target="_blank" rel="noopener noreferrer" aria-label="Book your stay via WhatsApp">
               <LuxuryButton size="xl" variant="primary">Book via WhatsApp</LuxuryButton>
             </a>
-            <a href={`tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}`}>
+            <a href={`tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}`} aria-label="Call Reservations desk to book your stay">
               <LuxuryButton size="xl" variant="primary">Call Reservations</LuxuryButton>
             </a>
           </div>

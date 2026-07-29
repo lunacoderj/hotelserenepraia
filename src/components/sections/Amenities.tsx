@@ -12,7 +12,7 @@ const amenities = [
 
 export const Amenities = () => {
   return (
-    <section className="py-24 bg-pearl relative overflow-hidden">
+    <section className="py-24 bg-pearl relative overflow-hidden" aria-label="Hotel Amenities">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

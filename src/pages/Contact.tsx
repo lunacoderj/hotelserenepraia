@@ -6,6 +6,10 @@ import { Phone, Mail } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { SEOHead } from '../components/common/SEOHead';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { FAQSection } from '../components/sections/FAQSection';
+import { FAQS } from '../data/seoData';
 
 // Fix for React Leaflet missing icons issue
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -41,9 +45,17 @@ export const Contact = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gold/10 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <SEOHead page="contact" />
         
-        {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 relative">
+          <div className="absolute left-0 top-0 hidden md:block">
+            <Breadcrumbs items={[{ label: 'Contact Us', path: '/contact' }]} />
+          </div>
+          
+          <div className="md:hidden mb-10 -mt-10">
+            <Breadcrumbs items={[{ label: 'Contact Us', path: '/contact' }]} />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -248,6 +260,15 @@ export const Contact = () => {
           </form>
         </motion.div>
 
+      </div>
+      
+      {/* FAQ Section */}
+      <div className="relative z-10 mt-24 border-t border-navy/5">
+        <FAQSection 
+          faqs={FAQS.filter(f => f.category === 'booking' || f.category === 'location').slice(0, 8)} 
+          title="Booking & Location Questions"
+          subtitle="Helpful Information"
+        />
       </div>
     </div>
   );

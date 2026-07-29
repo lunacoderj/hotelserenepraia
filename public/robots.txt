@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /claim-offer/
+
+Sitemap: https://hotelserenepraia.in/sitemap.xml

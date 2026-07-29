@@ -5,6 +5,7 @@ import { Footer } from './components/common/Footer'
 import { LoadingScreen } from './components/common/LoadingScreen'
 import { GlobalOverlays } from './components/common/GlobalOverlays'
 import { Home } from './pages/Home'
+import { GlobalSchema, SiteNavigationSchema } from './components/common/SchemaMarkup'
 import { Rooms } from './pages/Rooms'
 import { RoomDetails } from './pages/RoomDetails'
 import { Banquet } from './pages/Banquet'
@@ -12,8 +13,12 @@ import { Gallery } from './pages/Gallery'
 import { Contact } from './pages/Contact'
 import { NearbyAttractions } from './pages/NearbyAttractions'
 import { About } from './pages/About'
+import { Restaurant } from './pages/Restaurant'
 import { OfferLayout } from './pages/offers/OfferLayout'
 import { ClaimOffer } from './pages/offers/ClaimOffer'
+import { NearbyLanding } from './pages/NearbyLanding'
+import { GuidePage } from './pages/GuidePage'
+import { NotFound } from './pages/NotFound'
 
 // ScrollToTop component to handle route changes
 const ScrollToTop = () => {
@@ -56,6 +61,8 @@ function App() {
       <ScrollToTop />
       <LoadingScreen isLoading={isLoading} />
       <GlobalOverlays />
+      <GlobalSchema />
+      <SiteNavigationSchema />
       <Routes>
         <Route path="/" element={<Layout><Home /></Layout>} />
         <Route path="/rooms" element={<Layout><Rooms /></Layout>} />
@@ -64,14 +71,17 @@ function App() {
         <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="/about" element={<Layout><About /></Layout>} />
+        <Route path="/restaurant" element={<Layout><Restaurant /></Layout>} />
         <Route path="/attractions" element={<Layout><NearbyAttractions /></Layout>} />
+        <Route path="/nearby/:slug" element={<Layout><NearbyLanding /></Layout>} />
+        <Route path="/guide/:slug" element={<Layout><GuidePage /></Layout>} />
         <Route path="/offers/:slug" element={<Layout><OfferLayout /></Layout>} />
         <Route path="/claim-offer/:id" element={<ClaimOffer />} />
-        {/* We'll add more routes here as we build them */}
-        <Route path="*" element={<Layout><div className="pt-32 pb-20 text-center"><h1 className="text-display-md">Coming Soon</h1></div></Layout>} />
+        <Route path="*" element={<Layout><NotFound /></Layout>} />
       </Routes>
     </BrowserRouter>
   )
 }
 
 export default App
+

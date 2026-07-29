@@ -1,0 +1,308 @@
+// ─────────────────────────────────────────────────
+// Location Pages Data — "Hotel Near X" landing pages
+// Each entry has genuinely unique content about the landmark
+// ─────────────────────────────────────────────────
+
+export interface NearbyLocation {
+  slug: string;
+  name: string;
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  distance: string;
+  driveTime: string;
+  mapEmbedQuery: string;
+  heroImage: string;
+  content: string[];
+  highlights: string[];
+  faqs: { question: string; answer: string }[];
+  relatedAttractions: string[];
+  keywords: string[];
+}
+
+export const nearbyLocations: NearbyLocation[] = [
+  {
+    slug: 'hotel-near-rushikonda-beach',
+    name: 'Rushikonda Beach',
+    h1: 'Best Hotel Near Rushikonda Beach, Visakhapatnam',
+    metaTitle: 'Best Hotel Near Rushikonda Beach — Hotel Serene Praia | From ₹1,999/night',
+    metaDescription: 'Hotel Serene Praia is the closest premium hotel to Rushikonda Beach — just 1 km away. Sea-view rooms, AC suites, beach proximity. Book from ₹1,999/night. Visakhapatnam.',
+    distance: '1 km',
+    driveTime: '5 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+Rushikonda+Beach',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/rushikondabeach.jpg',
+    content: [
+      'Hotel Serene Praia is located just 1 kilometre from Rushikonda Beach, making it one of the most conveniently situated premium hotels on Visakhapatnam\'s northern coastline. The beach is a short 5-minute drive or a pleasant 10-minute walk from the hotel entrance.',
+      'Rushikonda Beach is a Blue Flag certified beach — one of only a handful in India to receive this prestigious international distinction for water quality, safety, environmental management, and visitor amenities. The beach is managed by Andhra Pradesh Tourism and features designated swimming zones, trained lifeguards, changing rooms, and clean washrooms.',
+      'For guests staying at Hotel Serene Praia, Rushikonda Beach offers a wide range of water sports including scuba diving, surfing lessons, jet skiing, parasailing, banana boat rides, and kayaking. AP Tourism operates a water sports complex directly on the beach, making it accessible for beginners and experienced adventurers alike.',
+      'The beach is also known for its golden sand, clean shoreline, and scenic rocky outcrops at either end. Sunrise and sunset views from Rushikonda are among the most photographed in Andhra Pradesh. Whether you visit for an early morning jog, an afternoon of water sports, or a peaceful evening walk along the shore, Rushikonda Beach delivers a world-class coastal experience.',
+    ],
+    highlights: ['Blue Flag Certified Beach', 'Scuba Diving & Water Sports', '5-Minute Walk from Hotel', 'Safe Swimming with Lifeguards', 'Sunrise & Sunset Views', 'AP Tourism Water Sports Complex'],
+    faqs: [
+      { question: 'How far is Hotel Serene Praia from Rushikonda Beach?', answer: 'Hotel Serene Praia is located just 1 km from Rushikonda Beach — a 5-minute drive or 10-minute walk. It is one of the closest premium hotels to the beach in Visakhapatnam.' },
+      { question: 'Can I walk to Rushikonda Beach from Hotel Serene Praia?', answer: 'Yes, Rushikonda Beach is within walking distance from Hotel Serene Praia. The beach is approximately a 10-minute walk from the hotel.' },
+      { question: 'What water sports are available at Rushikonda Beach?', answer: 'Rushikonda Beach offers scuba diving, surfing, jet skiing, parasailing, banana boat rides, kayaking, and speed boat rides. Activities are operated by AP Tourism and certified private operators.' },
+    ],
+    relatedAttractions: ['Thotlakonda Buddhist Complex', 'Kailasagiri Hill Park', 'RK Beach'],
+    keywords: ['hotel near rushikonda beach', 'stay near rushikonda', 'closest hotel to rushikonda beach', 'rushikonda beach hotel vizag'],
+  },
+  {
+    slug: 'hotel-near-rk-beach',
+    name: 'RK Beach (Ramakrishna Beach)',
+    h1: 'Hotel Near RK Beach, Visakhapatnam',
+    metaTitle: 'Hotel Near RK Beach Vizag — Hotel Serene Praia | 30 Min Drive',
+    metaDescription: 'Stay at Hotel Serene Praia, just 12 km from RK Beach. Enjoy the city coastline, INS Kurusura, TU-142 Museum, and return to premium sea-view rooms. From ₹1,999/night.',
+    distance: '12 km',
+    driveTime: '30 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+RK+Beach+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/rk_beach.png',
+    content: [
+      'RK Beach, officially Ramakrishna Beach, is the iconic heart of Visakhapatnam\'s coastline. Stretching along Beach Road, it is the city\'s most popular beachfront — lined with parks, memorials, street food stalls, and cultural landmarks. Hotel Serene Praia is 12 km from RK Beach, reachable in approximately 30 minutes via the scenic Beach Road.',
+      'The RK Beach promenade is home to several of Vizag\'s most visited attractions: INS Kurusura Submarine Museum (India\'s first submarine museum), TU-142 Aircraft Museum, the Victory at Sea War Memorial, Matsyadarshini Aquarium, and the VMRDA Children\'s Arena. Together, these make the stretch a full-day destination for families and tourists.',
+      'Beach Road also serves as Vizag\'s evening social hub. Local delicacies like mirchi bajji, punugulu, and fresh corn are staples of the street food scene. The well-lit promenade is perfect for cycling, jogging, or a leisurely walk at sunset. Several restaurants and cafes along the road offer seafood and Andhra cuisine with ocean views.',
+      'By choosing Hotel Serene Praia in the quieter Rushikonda area, guests enjoy the best of both worlds: proximity to Rushikonda Beach for relaxation and an easy drive to the vibrant RK Beach for sightseeing and entertainment.',
+    ],
+    highlights: ['INS Kurusura Submarine Museum', 'TU-142 Aircraft Museum', 'Beach Road Promenade', 'Street Food & Local Cuisine', 'VMRDA Park', 'Evening Entertainment'],
+    faqs: [
+      { question: 'How far is RK Beach from Hotel Serene Praia?', answer: 'RK Beach is approximately 12 km from Hotel Serene Praia, about a 30-minute drive via the scenic Beach Road.' },
+      { question: 'What attractions are near RK Beach?', answer: 'RK Beach is home to INS Kurusura Submarine Museum, TU-142 Aircraft Museum, Matsyadarshini Aquarium, VMRDA Park, and the Victory at Sea Memorial.' },
+    ],
+    relatedAttractions: ['INS Kurusura Museum', 'Tenneti Park', 'Palm Beach Avenue'],
+    keywords: ['hotel near rk beach', 'stay near ramakrishna beach', 'hotel near beach road vizag'],
+  },
+  {
+    slug: 'hotel-near-kailasagiri',
+    name: 'Kailasagiri Hill Park',
+    h1: 'Hotel Near Kailasagiri, Visakhapatnam',
+    metaTitle: 'Hotel Near Kailasagiri Vizag — Hotel Serene Praia | 20 Min Drive',
+    metaDescription: 'Hotel Serene Praia is 8 km from Kailasagiri Hill Park. Enjoy panoramic Bay of Bengal views, the famous ropeway, and Shiva-Parvati statues. Book from ₹1,999/night.',
+    distance: '8 km',
+    driveTime: '20 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+Kailasagiri+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/kailasagiri.png',
+    content: [
+      'Kailasagiri is a stunning hilltop park spread over 380 acres on the northern coast of Visakhapatnam. Rising 360 feet above sea level, it offers some of the most breathtaking panoramic views of the Bay of Bengal, the city skyline, and the surrounding Eastern Ghats. Hotel Serene Praia is just 8 km from Kailasagiri — a comfortable 20-minute drive.',
+      'The park\'s most iconic feature is the giant sculpture of Lord Shiva and Goddess Parvati, visible from great distances. A scenic ropeway connects the hilltop to the foothills, offering a thrilling cable car ride with aerial views of the coastline. The park also features a toy train, flower gardens, floral clock, and multiple viewing platforms.',
+      'Kailasagiri is particularly spectacular at sunrise and sunset, when the sky over the Bay of Bengal transforms into a canvas of golds and oranges. Photographers and nature enthusiasts from across India visit specifically for these golden-hour views. The park is well-maintained by VMRDA and offers food stalls, seating areas, and children\'s play zones.',
+      'After a day of exploring Kailasagiri, guests at Hotel Serene Praia can return to their comfortable rooms and enjoy the equally stunning sea views from the hotel itself — particularly from the Executive and Suite rooms.',
+    ],
+    highlights: ['Panoramic Bay of Bengal Views', 'Scenic Ropeway', 'Shiva-Parvati Sculpture', 'Toy Train Ride', 'Sunrise & Sunset Viewpoints', 'Flower Gardens'],
+    faqs: [
+      { question: 'How far is Kailasagiri from Hotel Serene Praia?', answer: 'Kailasagiri Hill Park is approximately 8 km from Hotel Serene Praia, about a 20-minute drive.' },
+      { question: 'What is the ropeway ticket price at Kailasagiri?', answer: 'Ropeway tickets at Kailasagiri are available at the park entrance. Prices are affordable and vary for adults and children. Check VMRDA\'s latest pricing for current rates.' },
+    ],
+    relatedAttractions: ['Rushikonda Beach', 'Tenneti Park', 'RK Beach'],
+    keywords: ['hotel near kailasagiri', 'stay near kailasagiri vizag', 'hotel close to kailasagiri hill park'],
+  },
+  {
+    slug: 'hotel-near-simhachalam-temple',
+    name: 'Simhachalam Temple',
+    h1: 'Hotel Near Simhachalam Temple, Visakhapatnam',
+    metaTitle: 'Hotel Near Simhachalam Temple — Hotel Serene Praia Vizag | Beach + Temple',
+    metaDescription: 'Stay at Hotel Serene Praia, 15 km from Simhachalam Temple. Combine spiritual visits with beach relaxation near Rushikonda. Premium rooms from ₹1,999/night.',
+    distance: '15 km',
+    driveTime: '30 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+Simhachalam+Temple+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png',
+    content: [
+      'Simhachalam Temple, officially Sri Varaha Lakshmi Narasimha Temple, is one of the 18 most important Vaishnavite temples in India and one of the most visited pilgrimage sites in Andhra Pradesh. Situated atop Simhachalam Hill at 800 feet elevation, the temple is dedicated to Lord Narasimha, the half-lion avatar of Vishnu. Hotel Serene Praia is 15 km from Simhachalam, a 30-minute drive.',
+      'The temple\'s 11th-century architecture is a masterpiece of Kalinga and Chalukya styles, featuring intricate stone carvings, massive pillars, and a towering gopuram. The unique tradition here is that the deity is covered in sandalwood paste (chandana lepam) throughout the year, except during the annual Chandana Yatra festival when the original form is revealed.',
+      'Devotees visiting Simhachalam often plan multi-day stays in Visakhapatnam, combining temple visits with beach tourism, hill station trips to Araku Valley, and city sightseeing. Hotel Serene Praia provides the ideal base — offering spiritual proximity while being situated on the beautiful Rushikonda coastline for relaxation between temple visits.',
+      'The drive from the hotel to Simhachalam passes through lush green hills, offering scenic views of the Eastern Ghats. Morning visits are recommended to avoid crowds, with darshan typically starting at 6:00 AM.',
+    ],
+    highlights: ['11th-Century Vaishnavite Temple', 'Kalinga & Chalukya Architecture', 'Annual Chandana Yatra Festival', 'Hilltop Location at 800 Feet', 'One of India\'s 18 Sacred Temples', 'Scenic Drive Through Eastern Ghats'],
+    faqs: [
+      { question: 'How far is Simhachalam Temple from Hotel Serene Praia?', answer: 'Simhachalam Temple is approximately 15 km from Hotel Serene Praia, about a 30-minute drive through scenic hilly terrain.' },
+      { question: 'What are the darshan timings at Simhachalam Temple?', answer: 'Darshan at Simhachalam Temple typically starts at 6:00 AM. We recommend visiting early morning to avoid crowds. Check the temple\'s official website for the latest schedule.' },
+    ],
+    relatedAttractions: ['Kailasagiri', 'Rushikonda Beach', 'RK Beach'],
+    keywords: ['hotel near simhachalam', 'temple stay vizag', 'hotel near simhachalam temple visakhapatnam'],
+  },
+  {
+    slug: 'hotel-near-vizag-airport',
+    name: 'Visakhapatnam Airport (VTZ)',
+    h1: 'Hotel Near Visakhapatnam Airport',
+    metaTitle: 'Hotel Near Vizag Airport — Hotel Serene Praia | Beach Stay + Airport Access',
+    metaDescription: 'Hotel Serene Praia is 18 km from Visakhapatnam Airport (VTZ). Premium beach hotel with airport transfers. Deluxe rooms from ₹1,999/night near Rushikonda Beach.',
+    distance: '18 km',
+    driveTime: '35–40 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+Visakhapatnam+Airport',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png',
+    content: [
+      'Visakhapatnam Airport (IATA: VTZ) is Andhra Pradesh\'s busiest airport, serving domestic flights from major Indian cities including Delhi, Mumbai, Bangalore, Hyderabad, Chennai, and Kolkata. Hotel Serene Praia is located 18 km from the airport — approximately 35 to 40 minutes by car via the well-connected NH-16.',
+      'The airport has been undergoing significant expansion as part of Vizag\'s growth as a Smart City and IT hub. Daily flights operate from all major carriers including IndiGo, SpiceJet, Air India, Vistara, and AirAsia. For international travellers, connecting flights from Hyderabad or Bangalore are the most convenient route to reach Vizag.',
+      'Hotel Serene Praia can arrange airport pickup and drop services on request, ensuring a smooth transition from flight to beachside relaxation. The drive from the airport to the hotel passes through the city and along parts of the scenic Beach Road, offering arriving guests their first glimpse of Vizag\'s famous coastline.',
+      'Unlike airport hotels that are located in busy commercial zones, Hotel Serene Praia offers the unique advantage of combining airport accessibility with a premium beachfront location near Rushikonda Beach — just 1 km from one of India\'s Blue Flag certified beaches.',
+    ],
+    highlights: ['35–40 Minutes from Airport', 'Airport Transfer Available', 'Daily Flights from Major Cities', 'Beach Location vs Commercial Airport Hotels', 'NH-16 Direct Connectivity', 'Premium Rooms After Long Flights'],
+    faqs: [
+      { question: 'How far is Hotel Serene Praia from Vizag Airport?', answer: 'Hotel Serene Praia is approximately 18 km from Visakhapatnam Airport (VTZ), about a 35–40 minute drive depending on traffic.' },
+      { question: 'Does Hotel Serene Praia provide airport transfer?', answer: 'Yes, Hotel Serene Praia can arrange airport pickup and drop services on request. Please contact us before your arrival to arrange transportation.' },
+    ],
+    relatedAttractions: ['Rushikonda Beach', 'Kailasagiri', 'Simhachalam Temple'],
+    keywords: ['hotel near vizag airport', 'airport hotel vizag', 'hotel near visakhapatnam airport'],
+  },
+  {
+    slug: 'hotel-near-gitam-university',
+    name: 'GITAM University',
+    h1: 'Hotel Near GITAM University, Visakhapatnam',
+    metaTitle: 'Hotel Near GITAM University Vizag — Hotel Serene Praia | 10 Min Drive',
+    metaDescription: 'Hotel Serene Praia is just 5 km from GITAM University, Visakhapatnam. Ideal for parents, visitors, and conference attendees. Premium rooms from ₹1,999/night.',
+    distance: '5 km',
+    driveTime: '10–15 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+GITAM+University+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png',
+    content: [
+      'GITAM (Gandhi Institute of Technology and Management) is one of the premier deemed universities in Andhra Pradesh, known for its engineering, management, pharmacy, and science programmes. The Visakhapatnam campus is the university\'s flagship, located in Rushikonda. Hotel Serene Praia is just 5 km from GITAM — a quick 10 to 15 minute drive.',
+      'The hotel is a popular choice for GITAM parents visiting during admission seasons, convocations, parent-teacher meetings, and campus events. The proximity makes it convenient for multiple campus visits, and the coastal location provides a relaxing environment between university commitments.',
+      'GITAM also hosts national and international conferences, seminars, and workshops throughout the academic year. Conference attendees and visiting faculty frequently choose Hotel Serene Praia for its combination of proximity, professional amenities (Wi-Fi, work desk, AC), and excellent value for money compared to city-centre hotels.',
+      'Hotel Serene Praia\'s location in Rushikonda means GITAM visitors can also explore the nearby Rushikonda Beach (1 km), enjoy water sports, and visit Thotlakonda Buddhist Complex — making their visit both productive and memorable.',
+    ],
+    highlights: ['5 km from GITAM Campus', 'Ideal for Parents & Visitors', 'Conference & Seminar Attendees', 'Work-Friendly Rooms with Wi-Fi', 'Nearby Beach for Relaxation', 'Excellent Value Pricing'],
+    faqs: [
+      { question: 'How far is GITAM University from Hotel Serene Praia?', answer: 'GITAM University is approximately 5 km from Hotel Serene Praia, about a 10–15 minute drive.' },
+      { question: 'Is Hotel Serene Praia suitable for GITAM conference attendees?', answer: 'Yes, our rooms feature Wi-Fi, work desks, and air conditioning — ideal for conference and seminar attendees. The proximity to GITAM makes commuting convenient.' },
+    ],
+    relatedAttractions: ['Rushikonda Beach', 'Thotlakonda', 'Andhra University'],
+    keywords: ['hotel near gitam', 'gitam university stay', 'hotel near gitam university vizag'],
+  },
+  {
+    slug: 'hotel-near-andhra-university',
+    name: 'Andhra University',
+    h1: 'Hotel Near Andhra University, Visakhapatnam',
+    metaTitle: 'Hotel Near Andhra University Vizag — Hotel Serene Praia | Beach Location',
+    metaDescription: 'Stay at Hotel Serene Praia, 10 km from Andhra University. Premium rooms near Rushikonda Beach, ideal for AU visitors, exams, and university events. From ₹1,999/night.',
+    distance: '10 km',
+    driveTime: '25 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+Andhra+University+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png',
+    content: [
+      'Andhra University (AU), established in 1926, is one of the oldest and most prestigious universities in South India. The sprawling campus sits on the scenic Waltair Uplands overlooking the Bay of Bengal. Hotel Serene Praia is 10 km from Andhra University, approximately 25 minutes by car.',
+      'The university is a major academic and research institution with thousands of students, faculty, and visiting scholars. During examination periods, convocations, and special events, accommodation demand near AU increases significantly. Hotel Serene Praia in Rushikonda offers a quieter, more premium alternative to the congested areas around Waltair.',
+      'AU\'s campus is also a popular tourist destination — the university\'s hilltop location offers stunning views, and the campus includes the Dr. V.S. Krishna Government Museum. Visitors often combine AU sightseeing with trips to nearby RK Beach and Kailasagiri.',
+      'For those attending events at AU, Hotel Serene Praia provides a refreshing coastal retreat. After a day on the bustling campus, guests can return to the tranquil Rushikonda area, take a beach walk, and enjoy the peaceful evenings near the Bay of Bengal.',
+    ],
+    highlights: ['10 km from Andhra University', 'Established 1926 — Historic Campus', 'Ideal for Exam & Event Visitors', 'Premium Beach Alternative to City Hotels', 'Government Museum on Campus', 'Scenic Waltair Uplands Location'],
+    faqs: [
+      { question: 'How far is Andhra University from Hotel Serene Praia?', answer: 'Andhra University is approximately 10 km from Hotel Serene Praia, about a 25-minute drive.' },
+    ],
+    relatedAttractions: ['RK Beach', 'Kailasagiri', 'Tenneti Park'],
+    keywords: ['hotel near andhra university', 'au vizag hotel', 'hotel near andhra university visakhapatnam'],
+  },
+  {
+    slug: 'hotel-near-it-sez',
+    name: 'Vizag IT SEZ (Millennium Tower)',
+    h1: 'Hotel Near IT SEZ & Tech Park, Visakhapatnam',
+    metaTitle: 'Hotel Near IT SEZ Vizag — Hotel Serene Praia | Business Stay + Beach',
+    metaDescription: 'Hotel Serene Praia is 6 km from Vizag IT SEZ and Millennium Tower. Executive rooms with work desk, Wi-Fi, and sea views. Ideal for business travellers. From ₹1,999.',
+    distance: '6 km',
+    driveTime: '15 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+IT+SEZ+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/executive_room.jpeg',
+    content: [
+      'Visakhapatnam\'s IT SEZ (Special Economic Zone) is one of Andhra Pradesh\'s fastest-growing technology corridors, housing major IT companies, BPO centres, and startup incubators. The Millennium Tower and IT SEZ campus is approximately 6 km from Hotel Serene Praia — a comfortable 15-minute drive.',
+      'The IT sector has transformed Vizag into a significant tech destination, attracting professionals from across India for projects, meetings, and assignments. Hotel Serene Praia\'s Executive Room is specifically designed for business travellers, featuring a dedicated work desk, high-speed Wi-Fi, mini fridge, and stunning sea views — a combination rarely found in traditional business hotels.',
+      'Business guests often appreciate the hotel\'s location as a productivity booster. Instead of a sterile business hotel in a commercial district, they wake up to Bay of Bengal views, take a morning beach walk at Rushikonda, and arrive at the IT SEZ refreshed and focused.',
+      'The hotel also caters to corporate teams with its banquet hall, which can be used for team offsites, workshops, and small conferences. With competitive pricing starting at ₹1,999 per night and corporate rates available for extended stays, Hotel Serene Praia offers outstanding value for business travel.',
+    ],
+    highlights: ['6 km from IT SEZ', 'Executive Rooms with Work Desk', 'High-Speed Wi-Fi', 'Sea View + Business Functionality', 'Banquet for Corporate Offsites', 'Corporate Rates Available'],
+    faqs: [
+      { question: 'How far is the IT SEZ from Hotel Serene Praia?', answer: 'Vizag IT SEZ is approximately 6 km from Hotel Serene Praia, about a 15-minute drive.' },
+      { question: 'Does Hotel Serene Praia offer corporate rates?', answer: 'Yes, we offer competitive corporate rates for extended stays and group bookings. Please contact our reservations team to discuss your requirements.' },
+    ],
+    relatedAttractions: ['GITAM University', 'Rushikonda Beach', 'Thotlakonda'],
+    keywords: ['hotel near it sez vizag', 'it park hotel vizag', 'business hotel near tech park vizag'],
+  },
+  {
+    slug: 'hotel-near-bheemili-beach',
+    name: 'Bheemili Beach',
+    h1: 'Hotel Near Bheemili Beach, Visakhapatnam',
+    metaTitle: 'Hotel Near Bheemili Beach — Hotel Serene Praia | Heritage Coast Stay',
+    metaDescription: 'Stay at Hotel Serene Praia, 18 km from Bheemili Beach. Explore Dutch colonial heritage, the historic lighthouse, and pristine sands. Premium rooms from ₹1,999.',
+    distance: '18 km',
+    driveTime: '35 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+Bheemili+Beach+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/bheemili-beach.png',
+    content: [
+      'Bheemili (Bheemunipatnam) Beach is located 18 km north of Hotel Serene Praia, about a 35-minute scenic drive along the coastline. It is one of the oldest municipalities in India, with a rich history dating back to the 17th-century Dutch East India Company.',
+      'The town retains significant Dutch colonial heritage, including a 17th-century cemetery, colonial bungalows, and a charming lighthouse that has guided ships for centuries. The beach itself is quieter and less commercialised than Rushikonda or RK Beach, making it ideal for travellers seeking solitude, history, and natural beauty.',
+      'Bheemili\'s coast features vast stretches of pristine sand, rocky tide pools, and the confluence of the Gosthani River with the Bay of Bengal — a unique geographical feature that creates a brackish-water ecosystem rich in birdlife. The area is increasingly popular among photographers, birdwatchers, and heritage enthusiasts.',
+      'A day trip to Bheemili from Hotel Serene Praia makes for a memorable excursion. Guests can explore the Dutch heritage sites in the morning, enjoy a fresh seafood lunch at a local restaurant, spend the afternoon on the beach, and return to the hotel for a sunset view from their room.',
+    ],
+    highlights: ['17th-Century Dutch Heritage', 'Historic Lighthouse', 'Pristine & Quiet Beach', 'River-Sea Confluence', 'Colonial Architecture', 'Birdwatching & Photography'],
+    faqs: [
+      { question: 'How far is Bheemili Beach from Hotel Serene Praia?', answer: 'Bheemili Beach is approximately 18 km from Hotel Serene Praia, about a 35-minute drive along the scenic coastal road.' },
+    ],
+    relatedAttractions: ['Rushikonda Beach', 'Thotlakonda', 'Kailasagiri'],
+    keywords: ['hotel near bheemili', 'bheemunipatnam hotel', 'hotel near bheemili beach vizag'],
+  },
+  {
+    slug: 'hotel-near-ins-kurusura',
+    name: 'INS Kurusura Submarine Museum',
+    h1: 'Hotel Near INS Kurusura Submarine Museum, Vizag',
+    metaTitle: 'Hotel Near INS Kurusura Submarine Museum — Hotel Serene Praia Vizag',
+    metaDescription: 'Hotel Serene Praia is 11 km from INS Kurusura Submarine Museum on RK Beach. Explore India\'s first submarine museum and stay near Rushikonda. From ₹1,999.',
+    distance: '11 km',
+    driveTime: '25 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+INS+Kurusura+Submarine+Museum',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/submarine.png',
+    content: [
+      'INS Kurusura Submarine Museum is one of Visakhapatnam\'s most iconic attractions — a real decommissioned Indian Navy submarine (S20) that served from 1969 to 2001. Now resting permanently on RK Beach, it is India\'s first submarine museum and a must-visit for every tourist in Vizag. Hotel Serene Praia is 11 km away, about a 25-minute drive.',
+      'Visitors can walk through the actual submarine interior, experiencing the cramped quarters, torpedo room, control panels, navigation instruments, and sleeping bunks where naval officers lived during active service. The museum offers a fascinating insight into submarine warfare and the daily life of submariners who defended India\'s coastline.',
+      'The museum is situated on the RK Beach promenade, alongside the TU-142 Aircraft Museum — a converted long-range maritime patrol aircraft. Together, they form a unique military heritage corridor that attracts hundreds of thousands of visitors annually, especially families and school groups.',
+      'A visit to INS Kurusura pairs perfectly with a stay at Hotel Serene Praia. Spend the morning exploring the submarine and aircraft museums, enjoy lunch at one of the many seafood restaurants on Beach Road, and return to the hotel for a relaxing afternoon by Rushikonda Beach.',
+    ],
+    highlights: ['India\'s First Submarine Museum', 'Real Decommissioned INS Kurusura', 'Walk-Through Submarine Interior', 'Adjacent to TU-142 Aircraft Museum', 'RK Beach Location', 'Fascinating Military Heritage'],
+    faqs: [
+      { question: 'How far is INS Kurusura from Hotel Serene Praia?', answer: 'INS Kurusura Submarine Museum is approximately 11 km from Hotel Serene Praia, about a 25-minute drive.' },
+    ],
+    relatedAttractions: ['RK Beach', 'Tenneti Park', 'Palm Beach Avenue'],
+    keywords: ['hotel near submarine museum', 'ins kurusura stay', 'hotel near ins kurusura vizag'],
+  },
+  {
+    slug: 'hotel-near-tenneti-park',
+    name: 'Tenneti Park',
+    h1: 'Hotel Near Tenneti Park, Visakhapatnam',
+    metaTitle: 'Hotel Near Tenneti Park Vizag — Hotel Serene Praia | Cliffside Views',
+    metaDescription: 'Stay at Hotel Serene Praia, 9 km from Tenneti Park. Enjoy cliffside ocean views, romantic sunsets, and return to sea-view rooms. From ₹1,999/night.',
+    distance: '9 km',
+    driveTime: '22 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+Tenneti+Park+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/tennetipark.png',
+    content: [
+      'Tenneti Park is one of the oldest and most charming parks in Visakhapatnam, perched on a cliff overlooking the Bay of Bengal. Known locally as one of the best sunset spots in the city, it offers dramatic cliffside views of the ocean crashing against the rocks below. Hotel Serene Praia is 9 km from Tenneti Park, about a 22-minute drive.',
+      'The park is famous as a filming location for several Telugu and Bollywood movies, and its romantic atmosphere has made it a beloved destination for couples. The clifftop walkways, manicured gardens, and panoramic viewpoints create a serene escape from the bustle of the city.',
+      'Tenneti Park is situated between RK Beach and Rushikonda on the coastal road, making it an ideal stop during a day of beach-hopping along Vizag\'s coastline. The park is well-maintained, free to enter, and features seating areas perfect for a quiet morning coffee or evening contemplation.',
+      'For guests at Hotel Serene Praia who love coastal scenery, Tenneti Park offers a different perspective — while the hotel provides beach-level sea views, Tenneti Park delivers dramatic elevated ocean panoramas from its clifftop vantage point.',
+    ],
+    highlights: ['Dramatic Cliffside Ocean Views', 'Best Sunset Spot in Vizag', 'Famous Filming Location', 'Romantic Couples Destination', 'Free Entry', 'Peaceful Gardens'],
+    faqs: [
+      { question: 'How far is Tenneti Park from Hotel Serene Praia?', answer: 'Tenneti Park is approximately 9 km from Hotel Serene Praia, about a 22-minute drive along the coastal road.' },
+    ],
+    relatedAttractions: ['RK Beach', 'Palm Beach Avenue', 'Kailasagiri'],
+    keywords: ['hotel near tenneti park', 'seafront stay vizag', 'hotel near tenneti park vizag'],
+  },
+  {
+    slug: 'hotel-near-thotlakonda',
+    name: 'Thotlakonda Buddhist Complex',
+    h1: 'Hotel Near Thotlakonda, Visakhapatnam',
+    metaTitle: 'Hotel Near Thotlakonda Buddhist Complex — Hotel Serene Praia Vizag',
+    metaDescription: 'Hotel Serene Praia is 6 km from Thotlakonda Buddhist Complex. Explore 2,000-year-old ruins overlooking the Bay of Bengal. Rooms from ₹1,999/night.',
+    distance: '6 km',
+    driveTime: '15 minutes',
+    mapEmbedQuery: 'Hotel+Serene+Praia+to+Thotlakonda+Visakhapatnam',
+    heroImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/Thotlakonda-Beach.png',
+    content: [
+      'Thotlakonda is a 2,000-year-old Buddhist monastery complex perched on a hilltop overlooking the Bay of Bengal. Dating back to the 2nd century BC, it is one of the most significant archaeological sites in Andhra Pradesh, revealing the region\'s deep connection to ancient Buddhist trade routes. Hotel Serene Praia is just 6 km from Thotlakonda — a 15-minute drive.',
+      'The excavated site includes the remains of a monastery, prayer halls, meditation platforms, water cisterns, and a stone-paved pathway. Archaeological evidence suggests Thotlakonda was an important Buddhist centre where monks lived, meditated, and engaged in maritime trade. Coins, pottery, and Roman artefacts found here indicate international trade connections.',
+      'The hilltop location offers spectacular views of the coastline and is surrounded by natural vegetation and rock formations. The site is particularly atmospheric in the early morning, when mist sometimes clings to the ruins. History enthusiasts and photography lovers find Thotlakonda one of the most rewarding attractions in Vizag.',
+      'The beach below Thotlakonda Hill is also worth visiting — a serene, relatively undiscovered stretch of coast that offers calm waters and natural beauty. From Hotel Serene Praia, guests can easily combine a Thotlakonda visit with Rushikonda Beach activities for a full day of exploration.',
+    ],
+    highlights: ['2,000-Year-Old Buddhist Ruins', 'Hilltop Archaeological Site', 'Bay of Bengal Panoramic Views', 'Ancient Maritime Trade History', 'Photography & Heritage Site', 'Nearby Pristine Beach'],
+    faqs: [
+      { question: 'How far is Thotlakonda from Hotel Serene Praia?', answer: 'Thotlakonda Buddhist Complex is approximately 6 km from Hotel Serene Praia, about a 15-minute drive.' },
+    ],
+    relatedAttractions: ['Rushikonda Beach', 'GITAM University', 'Bheemili Beach'],
+    keywords: ['hotel near thotlakonda', 'heritage stay vizag', 'hotel near thotlakonda buddhist complex'],
+  },
+];

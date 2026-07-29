@@ -6,6 +6,9 @@ import { roomsData } from '../data/rooms';
 import { LuxuryButton } from '../components/ui/Button';
 import { CONTACT_CONFIG } from '../config/contacts';
 import { CanvasSequence } from '../components/ui/CanvasSequence';
+import { SEOHead } from '../components/common/SEOHead';
+import { RoomSchema } from '../components/common/SchemaMarkup';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
 
 export const RoomDetails = () => {
   useLenisScroll();
@@ -23,6 +26,8 @@ export const RoomDetails = () => {
 
   return (
     <div className="bg-pearl min-h-screen">
+      <SEOHead page={`room-${room.slug}`} />
+      <RoomSchema roomSlug={room.slug} />
       
       {/* 
         ========================================================================
@@ -227,6 +232,13 @@ export const RoomDetails = () => {
         
         {/* Main Details */}
         <div className="lg:col-span-2">
+          <div className="hidden md:block -mt-16 mb-8">
+            <Breadcrumbs items={[{ label: 'Rooms', path: '/rooms' }, { label: room.name, path: `/rooms/${room.slug}` }]} />
+          </div>
+          <div className="md:hidden mb-8">
+            <Breadcrumbs items={[{ label: 'Rooms', path: '/rooms' }, { label: room.name, path: `/rooms/${room.slug}` }]} />
+          </div>
+
           <motion.div
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}

@@ -3,6 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useLenisScroll } from '../hooks';
+import { SEOHead } from '../components/common/SEOHead';
+import { RoomsListSchema } from '../components/common/SchemaMarkup';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { LuxuryCard } from '../components/ui/Card';
 import { LuxuryButton } from '../components/ui/Button';
 import { roomsData } from '../data/rooms';
@@ -12,15 +15,19 @@ export const Rooms = () => {
 
   return (
     <div className="bg-pearl min-h-screen pt-32 pb-24">
-      <Helmet>
-        <title>Luxury Rooms & Suites | Hotel Serene Praia Visakhapatnam</title>
-        <meta name="description" content="Book premium rooms and executive suites near Rushikonda Beach, Vizag. Enjoy sea view rooms, deluxe double rooms, and affordable luxury accommodation in Visakhapatnam." />
-        <meta name="keywords" content="Premium rooms in Rushikonda Vizag, Deluxe double rooms in Visakhapatnam, Executive suites near Rushikonda Beach, Sea view suites in Vizag, Luxury room booking near Vizag Beach Road, Best family rooms in Rushikonda, Affordable AC rooms near Rushikonda, King bed hotel rooms in Visakhapatnam" />
-      </Helmet>
+      <SEOHead page="rooms" />
+      <RoomsListSchema />
+      
       <div className="max-w-7xl mx-auto px-6">
-        
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 relative">
+          <div className="absolute left-0 top-0 hidden md:block">
+            <Breadcrumbs items={[{ label: 'Rooms', path: '/rooms' }]} />
+          </div>
+          
+          <div className="md:hidden mb-10 -mt-10">
+            <Breadcrumbs items={[{ label: 'Rooms', path: '/rooms' }]} />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

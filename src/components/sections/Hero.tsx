@@ -15,7 +15,7 @@ export const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-navy">
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-navy" aria-label="Hero Section">
       {/* Background Media */}
       <motion.div 
         style={{ y }}
@@ -63,10 +63,10 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 sm:gap-6"
         >
-          <Link to="/rooms">
+          <Link to="/rooms" aria-label="View our rooms and book your stay">
             <LuxuryButton size="lg" variant="primary">Book Your Stay</LuxuryButton>
           </Link>
-          <a href="#about">
+          <a href="#about" aria-label="Learn more about Hotel Serene Praia">
             <LuxuryButton size="lg" variant="outline">Explore Hotel</LuxuryButton>
           </a>
         </motion.div>

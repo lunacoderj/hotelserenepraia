@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLenisScroll } from '../hooks';
 import { LuxuryButton } from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../components/common/SEOHead';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
 
 export const About = () => {
   useLenisScroll();
@@ -18,7 +20,12 @@ export const About = () => {
 
   return (
     <div className="bg-pearl min-h-screen">
+      <SEOHead page="about" />
       
+      <div className="absolute top-0 left-0 w-full z-50 pt-20">
+        <Breadcrumbs items={[{ label: 'About Us', path: '/about' }]} />
+      </div>
+
       {/* Parallax Hero */}
       <section ref={containerRef} className="relative w-full aspect-video md:h-screen bg-navy overflow-hidden">
         <motion.div 

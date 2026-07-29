@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 import { AdventuresCarousel } from '../components/sections/AdventuresCarousel';
 import { TemplesCarousel } from '../components/sections/TemplesCarousel';
 import { RestaurantsCarousel } from '../components/sections/RestaurantsCarousel';
+import { SEOHead } from '../components/common/SEOHead';
+import { TouristAttractionsSchema } from '../components/common/SchemaMarkup';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
 
 export const NearbyAttractions = () => {
   useLenisScroll();
@@ -21,12 +24,18 @@ export const NearbyAttractions = () => {
 
   return (
     <div className="bg-navy min-h-screen text-pearl selection:bg-gold selection:text-navy">
-      <Helmet>
-        <title>Tourist Attractions Near Hotel Serene Praia | Vizag</title>
-        <meta name="description" content="Discover the best places to visit near Rushikonda, Vizag. From adventure sports to sacred temples and scenic beaches, plan your perfect itinerary with Hotel Serene Praia." />
-        <meta name="keywords" content="Adventure places near Rushikonda Vizag, Rushikonda beach water sports stay, Hotels near scuba diving in Vizag, Paramotoring Rushikonda beach accommodation, AP Tourism Boating Rushikonda nearby hotels, Hotels near Thotlakonda Buddhist Archaeological Site, Places to visit near Pedda Rushikonda, Stays near Shilparamam Jathara Park Vizag, Hotels near Indira Gandhi Zoological Park" />
-      </Helmet>
+      <SEOHead page="attractions" />
+      <TouristAttractionsSchema 
+        attractions={attractionsData.map(a => ({
+          name: a.name,
+          description: a.description,
+          image: Array.isArray(a.image) ? a.image[0] : a.image
+        }))} 
+      />
       
+      <div className="absolute top-0 left-0 w-full z-50 pt-20">
+        <Breadcrumbs items={[{ label: 'Nearby Attractions', path: '/attractions' }]} />
+      </div>
       {/* ─── CINEMATIC HERO ─── */}
       <section ref={heroRef} className="relative h-screen w-full bg-navy overflow-hidden">
         <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-full">

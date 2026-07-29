@@ -6,6 +6,8 @@ import { offersData } from '../../data/offers';
 import { Countdown } from '../../components/offers/Countdown';
 import { LuxuryButton } from '../../components/ui/Button';
 import { CONTACT_CONFIG } from '../../config/contacts';
+import { SEOHead } from '../../components/common/SEOHead';
+import { Breadcrumbs } from '../../components/common/Breadcrumbs';
 
 export const OfferLayout = () => {
   useLenisScroll();
@@ -18,7 +20,16 @@ export const OfferLayout = () => {
 
   return (
     <div className="bg-pearl min-h-screen">
+      <SEOHead 
+        title={`${offer.title} | Hotel Serene Praia`} 
+        description={offer.description} 
+        ogImage={offer.image}
+      />
       
+      <div className="absolute top-0 left-0 w-full z-50 pt-20">
+        <Breadcrumbs items={[{ label: 'Offers', path: '/' }, { label: offer.title, path: `/claim-offer/${offer.slug}` }]} />
+      </div>
+
       {/* Hero Section */}
       <section className="relative h-[80vh] w-full bg-navy pt-24">
         <img 

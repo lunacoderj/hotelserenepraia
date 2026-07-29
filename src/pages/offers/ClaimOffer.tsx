@@ -5,6 +5,8 @@ import { Wifi, Tv, Wind, Coffee, Bath, Car, Utensils, Music, Waves, Check } from
 import { offersData } from '../../data/offers';
 import { roomsData } from '../../data/rooms';
 import { CONTACT_CONFIG } from '../../config/contacts';
+import { SEOHead } from '../../components/common/SEOHead';
+import { Breadcrumbs } from '../../components/common/Breadcrumbs';
 
 const getIconForAmenity = (feature: string) => {
   const text = feature.toLowerCase();
@@ -114,6 +116,14 @@ export const ClaimOffer = () => {
 
   return (
     <div className="min-h-screen bg-[#050B14] text-pearl font-body overflow-x-hidden selection:bg-gold selection:text-navy">
+      <SEOHead 
+        title={`Claim ${offer.title} | Hotel Serene Praia`} 
+        description={offer.description} 
+        ogImage={offer.image}
+      />
+      <div className="absolute top-0 left-0 w-full z-[200] pt-8 px-4 pointer-events-auto">
+        <Breadcrumbs items={[{ label: 'Offers', path: '/' }, { label: `Claim ${offer.title}`, path: `/claim-offer/${offer.id}` }]} />
+      </div>
       <AnimatePresence mode="wait">
         {/* PHASE 1: LOADING */}
         {phase === 'loading' && (

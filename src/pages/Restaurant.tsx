@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { useLenisScroll } from '../hooks';
 import { LuxuryButton } from '../components/ui/Button';
 import { CONTACT_CONFIG } from '../config/contacts';
+import { SEOHead } from '../components/common/SEOHead';
+import { RestaurantSchema } from '../components/common/SchemaMarkup';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
 
 const menuHighlights = [
   { name: 'Grilled Sea Bass', desc: 'Fresh local catch with lemon butter sauce.', price: '₹950' },
@@ -16,6 +19,13 @@ export const Restaurant = () => {
 
   return (
     <div className="bg-pearl min-h-screen">
+      <SEOHead page="dining" />
+      <RestaurantSchema />
+      
+      <div className="absolute top-0 left-0 w-full z-50 pt-20">
+        <Breadcrumbs items={[{ label: 'Restaurant', path: '/restaurant' }]} />
+      </div>
+
       <section className="relative h-[60vh] w-full bg-navy">
         <img 
           src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop" 

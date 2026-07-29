@@ -4,13 +4,13 @@ import { CONTACT_CONFIG } from '../../config/contacts';
 
 export const Footer = () => {
   return (
-    <footer className="bg-navy-700 text-pearl pt-20 pb-10 border-t border-white/5">
+    <footer className="bg-navy-700 text-pearl pt-20 pb-10 border-t border-white/5" aria-label="Site Footer">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
           <div className="mb-6">
             <img 
               src="https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/logo_tranparent.png" 
-              alt="Hotel Serene Praia" 
+              alt="Hotel Serene Praia — Luxury Beach Hotel, Rushikonda, Visakhapatnam"
               className="h-24 w-auto object-contain"
             />
           </div>
@@ -19,10 +19,10 @@ export const Footer = () => {
             A sanctuary of tranquility in Visakhapatnam.
           </p>
           <div className="flex gap-4">
-            <a href={CONTACT_CONFIG.instagram} target="_blank" rel="noreferrer" className="text-gold hover:text-white transition-colors">
+            <a href={CONTACT_CONFIG.instagram} target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors" aria-label="Follow Hotel Serene Praia on Instagram">
               IG
             </a>
-            <a href={CONTACT_CONFIG.facebook} target="_blank" rel="noreferrer" className="text-gold hover:text-white transition-colors">
+            <a href={CONTACT_CONFIG.facebook} target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors" aria-label="Follow Hotel Serene Praia on Facebook">
               FB
             </a>
           </div>
@@ -30,24 +30,30 @@ export const Footer = () => {
 
         <div>
           <h4 className="font-display text-heading-sm text-white mb-6">Quick Links</h4>
+          <nav aria-label="Footer Navigation">
           <ul className="space-y-4 text-body-sm text-pearl/70">
             <li><Link to="/about" className="hover:text-gold transition-colors">Our Story</Link></li>
             <li><Link to="/rooms" className="hover:text-gold transition-colors">Our Rooms</Link></li>
+            <li><Link to="/restaurant" className="hover:text-gold transition-colors">Restaurant</Link></li>
             <li><Link to="/banquet" className="hover:text-gold transition-colors">Banquet Hall</Link></li>
+            <li><Link to="/attractions" className="hover:text-gold transition-colors">Nearby Attractions</Link></li>
             <li><Link to="/gallery" className="hover:text-gold transition-colors">Gallery</Link></li>
+            <li><Link to="/guide/things-to-do-in-vizag" className="hover:text-gold transition-colors">Travel Guides</Link></li>
           </ul>
+          </nav>
         </div>
 
         <div>
           <h4 className="font-display text-heading-sm text-white mb-6">Contact Us</h4>
+          <address className="not-italic">
           <ul className="space-y-4 text-body-sm text-pearl/70">
             <li>
-              <a href={`tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-gold transition-colors">
+              <a href={`tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-gold transition-colors" aria-label="Call Hotel Serene Praia">
                 {CONTACT_CONFIG.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${CONTACT_CONFIG.email}`} className="hover:text-gold transition-colors">
+              <a href={`mailto:${CONTACT_CONFIG.email}`} className="hover:text-gold transition-colors" aria-label="Email Hotel Serene Praia">
                 {CONTACT_CONFIG.email}
               </a>
             </li>
@@ -55,6 +61,7 @@ export const Footer = () => {
               {CONTACT_CONFIG.address}
             </li>
           </ul>
+          </address>
         </div>
 
         <div>

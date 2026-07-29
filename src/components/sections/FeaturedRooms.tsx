@@ -9,6 +9,7 @@ const featuredRooms = [
     id: 'deluxe',
     name: 'Deluxe Room',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/deluxe_bed.jpeg',
+    imageAlt: 'Comfortable Deluxe Room with smart TV and workspace at Hotel Serene Praia',
     price: '₹1,999',
     actualPrice: '₹2,700',
     features: ['Comfortable Stay', 'Smart TV', 'Workspace'],
@@ -17,6 +18,7 @@ const featuredRooms = [
     id: 'suite',
     name: 'Suite Room',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/beachview.webp',
+    imageAlt: 'Luxury Suite Room with sea view and separate living area at Hotel Serene Praia',
     price: '₹4,499',
     actualPrice: '₹6,500',
     features: ['Separate Living Room', 'Sea View', 'Mini Fridge'],
@@ -25,6 +27,7 @@ const featuredRooms = [
     id: 'executive',
     name: 'Executive Room',
     image: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/executive_room.jpeg',
+    imageAlt: 'Premium Executive Room featuring sea view and luxury bathroom at Hotel Serene Praia',
     price: '₹4,099',
     actualPrice: '₹6,500',
     features: ['Executive Bedroom', 'Sea View', 'Premium Bathroom'],
@@ -54,7 +57,7 @@ export const FeaturedRooms = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Link to="/rooms">
+            <Link to="/rooms" aria-label="View all accommodations at Hotel Serene Praia">
               <LuxuryButton variant="outline">View All Rooms</LuxuryButton>
             </Link>
           </motion.div>
@@ -73,8 +76,9 @@ export const FeaturedRooms = () => {
                 <div className="relative h-72 overflow-hidden">
                   <img 
                     src={room.image} 
-                    alt={room.name} 
+                    alt={room.imageAlt || room.name} 
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute top-4 right-4 bg-navy/90 backdrop-blur-sm px-4 py-2 text-pearl">
                     <span className="font-display text-heading-sm block leading-none">{room.price}</span>
@@ -91,7 +95,7 @@ export const FeaturedRooms = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to="/rooms" className="mt-auto">
+                  <Link to="/rooms" className="mt-auto" aria-label={`Discover more about ${room.name}`}>
                     <span className="text-gold font-body text-body-sm uppercase tracking-widest hover:text-navy transition-colors flex items-center gap-2">
                       Discover More
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

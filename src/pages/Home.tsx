@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollTrigger, useLenisScroll } from '../hooks';
+import { SEOHead } from '../components/common/SEOHead';
+import { VideoSchema } from '../components/common/SchemaMarkup';
+import { FAQS } from '../data/seoData';
+import { FAQSection } from '../components/sections/FAQSection';
+import { ReviewsSection } from '../components/sections/ReviewsSection';
 import { Hero } from '../components/sections/Hero';
 import { QuickBooking } from '../components/sections/QuickBooking';
 import { About } from '../components/sections/About';
@@ -20,11 +25,8 @@ export const Home = () => {
 
   return (
     <div className="bg-pearl min-h-screen">
-      <Helmet>
-        <title>Hotel Serene Praia Visakhapatnam | Beachfront hotels in Rushikonda</title>
-        <meta name="description" content="Looking for beachfront hotels in Visakhapatnam? Hotel Serene Praia is the best 3-star hotel in Rushikonda, offering sea-view rooms and luxury suites near Rushikonda Beach and GITAM University Vizag." />
-        <meta name="keywords" content="Hotel Serene Praia Visakhapatnam, Serene Praia Hotel Vizag, Best beach hotels in Visakhapatnam, Beachfront hotels in Visakhapatnam, Sea view rooms in Vizag, Top places to stay near Rushikonda Beach, Budget beach hotels in Rushikonda, Premium inns in Visakhapatnam, 3-star hotels in Pedda Rushikonda, Hotels near GITAM University Vizag, Best oceanfront accommodation in Andhra Pradesh" />
-      </Helmet>
+      <SEOHead page="home" />
+      <VideoSchema />
       <Hero />
       <QuickBooking />
       <About />
@@ -34,6 +36,8 @@ export const Home = () => {
       <DiscoverMore />
       <AttractionsCarousel />
       <RestaurantsCarousel onRouteSelect={setSelectedRoute} />
+      <ReviewsSection />
+      <FAQSection faqs={FAQS} />
       <FinalCTA />
 
       {/* ─── FREE DIRECTIONS MODAL ─── */}

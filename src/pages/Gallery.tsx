@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLenisScroll } from '../hooks';
+import { SEOHead } from '../components/common/SEOHead';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { ImageGallerySchema } from '../components/common/SchemaMarkup';
+import { GALLERY_ALT_TEXT } from '../data/seoData';
 
 const galleryImages = [
   { src: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png', span: 'col-span-1 md:col-span-2 row-span-2' },
@@ -22,8 +26,25 @@ export const Gallery = () => {
 
   return (
     <div className="bg-pearl min-h-screen pt-32 pb-24">
+      <SEOHead page="gallery" />
+      <ImageGallerySchema 
+        images={galleryImages.map(img => {
+          const filename = img.src.split('/').pop() || '';
+          const decodedFilename = decodeURIComponent(filename);
+          return { src: img.src, alt: GALLERY_ALT_TEXT[decodedFilename] || 'Hotel Serene Praia Gallery Image' };
+        })} 
+      />
+
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 relative">
+          <div className="absolute left-0 top-0 hidden md:block">
+            <Breadcrumbs items={[{ label: 'Gallery', path: '/gallery' }]} />
+          </div>
+          
+          <div className="md:hidden mb-10 -mt-10">
+            <Breadcrumbs items={[{ label: 'Gallery', path: '/gallery' }]} />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +75,7 @@ export const Gallery = () => {
             >
               <img 
                 src={image.src} 
-                alt={`Gallery visual ${idx + 1}`} 
+                alt={GALLERY_ALT_TEXT[decodeURIComponent(image.src.split('/').pop() || '')] || `Gallery visual ${idx + 1}`} 
                 className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">

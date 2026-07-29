@@ -43,16 +43,16 @@ export const Header = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-22 flex items-center justify-between">
-          <Link to="/" className="relative z-10 flex items-center h-full">
+          <Link to="/" className="relative z-10 flex items-center h-full" aria-label="Hotel Serene Praia — Home">
             <img 
               src="https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/logo_tranparent.png" 
-              alt="Hotel Serene Praia" 
+              alt="Hotel Serene Praia — Luxury Beach Hotel near Rushikonda, Visakhapatnam" 
               className="h-16 w-auto object-contain"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -77,6 +77,8 @@ export const Header = () => {
           <button
             className="lg:hidden relative z-[110] w-10 h-10 flex flex-col justify-center items-center gap-1.5"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMobileMenuOpen}
           >
             <span className={`block w-6 h-0.5 bg-gold transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
             <span className={`block w-6 h-0.5 bg-gold transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
@@ -94,7 +96,7 @@ export const Header = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[90] bg-navy flex flex-col justify-start items-center pt-32 pb-12 overflow-y-auto"
           >
-            <nav className="flex flex-col items-center gap-8">
+            <nav className="flex flex-col items-center gap-8" aria-label="Mobile Navigation">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.path}

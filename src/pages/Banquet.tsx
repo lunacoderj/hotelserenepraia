@@ -5,6 +5,11 @@ import { useLenisScroll } from '../hooks';
 import { LuxuryButton } from '../components/ui/Button';
 import { CONTACT_CONFIG } from '../config/contacts';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../components/common/SEOHead';
+import { EventVenueSchema } from '../components/common/SchemaMarkup';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { FAQSection } from '../components/sections/FAQSection';
+import { FAQS } from '../data/seoData';
 
 const amenities = [
   { icon: "🏛️", label: "Spacious Hall", detail: "Large Guest Capacity" },
@@ -26,11 +31,12 @@ export const Banquet = () => {
 
   return (
     <div className="bg-pearl min-h-screen">
-      <Helmet>
-        <title>Premium Banquet Halls in Rushikonda | Hotel Serene Praia Vizag</title>
-        <meta name="description" content="Host your next event at the best hotel with banquet near Rushikonda. Perfect for weddings, corporate meets, and parties. AC banquet hall in Pedda Rushikonda." />
-        <meta name="keywords" content="Banquet halls in Rushikonda Visakhapatnam, Best hotel with banquet near Rushikonda, AC banquet hall in Pedda Rushikonda, Small party halls near Rushikonda beach, Event spaces in Vizag near IT SEZ, Mini banquet halls for corporate meets in Vizag" />
-      </Helmet>
+      <SEOHead page="banquet" />
+      <EventVenueSchema />
+      
+      <div className="absolute top-0 left-0 w-full z-50 pt-20">
+        <Breadcrumbs items={[{ label: 'Banquet Hall', path: '/banquet' }]} />
+      </div>
 
       {/* ─── CINEMATIC PARALLAX HERO ─── */}
       <section ref={heroRef} className="relative h-[110vh] w-full bg-navy overflow-hidden">
@@ -344,6 +350,14 @@ export const Banquet = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mb-32">
+          <FAQSection 
+            faqs={FAQS.filter(f => f.question.toLowerCase().includes('event') || f.question.toLowerCase().includes('hall') || f.question.toLowerCase().includes('party')).slice(0, 5)} 
+            title="Event Planning FAQs"
+            subtitle="Frequently Asked Questions"
+          />
         </div>
 
         {/* ─── FINAL CTA ─── */}
