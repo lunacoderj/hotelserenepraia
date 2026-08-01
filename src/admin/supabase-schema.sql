@@ -45,7 +45,7 @@ CREATE POLICY "Allow authenticated insert access for room_types" ON room_types F
 CREATE POLICY "Allow authenticated update access for room_types" ON room_types FOR UPDATE TO authenticated USING (true);
 CREATE POLICY "Allow authenticated delete access for room_types" ON room_types FOR DELETE TO authenticated USING (true);
 
-CREATE POLICY "Allow authenticated read access for inventory" ON inventory FOR SELECT TO authenticated USING (true);
+CREATE POLICY "Allow public read access for inventory" ON inventory FOR SELECT USING (true);
 CREATE POLICY "Allow authenticated insert access for inventory" ON inventory FOR INSERT TO authenticated WITH CHECK (true);
 CREATE POLICY "Allow authenticated update access for inventory" ON inventory FOR UPDATE TO authenticated USING (true);
 CREATE POLICY "Allow authenticated delete access for inventory" ON inventory FOR DELETE TO authenticated USING (true);

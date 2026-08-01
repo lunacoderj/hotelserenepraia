@@ -2,11 +2,14 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { LayoutDashboard, BedDouble, CalendarDays, BarChart3, Settings, LogOut } from 'lucide-react';
 
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const basePath = isLocal ? '/admin' : '';
+
 const navItems = [
-  { label: 'Dashboard', icon: LayoutDashboard, path: '/admin/dashboard' },
-  { label: 'Bookings', icon: CalendarDays, path: '/admin/bookings' },
-  { label: 'Rooms', icon: BedDouble, path: '/admin/rooms' },
-  { label: 'Pricing', icon: BarChart3, path: '/admin/pricing' },
+  { label: 'Dashboard', icon: LayoutDashboard, path: `${basePath}/dashboard` },
+  { label: 'Bookings', icon: CalendarDays, path: `${basePath}/bookings` },
+  { label: 'Rooms', icon: BedDouble, path: `${basePath}/rooms` },
+  { label: 'Pricing', icon: BarChart3, path: `${basePath}/pricing` },
 ];
 
 import { supabase } from '../utils/supabaseClient';
