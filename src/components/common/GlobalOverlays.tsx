@@ -55,7 +55,8 @@ export const GlobalOverlays = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isAdminRoute = location.pathname.startsWith('/admin');
+  const isAdminHost = window.location.hostname.startsWith('admin.') || window.location.hostname === 'hsp-admin.vercel.app';
+  const isAdminRoute = location.pathname.startsWith('/admin') || isAdminHost;
 
   useEffect(() => {
     if (isAdminRoute) return;
