@@ -14,11 +14,15 @@ export const Dashboard = () => {
     fetchDashboardData();
   }, [fetchDashboardData]);
 
-  if (isLoading || !kpis) {
+  if (isLoading && !kpis) {
     return <div className="animate-pulse space-y-8">
       <div className="h-32 bg-slate-200 rounded-xl w-full"></div>
       <div className="h-64 bg-slate-200 rounded-xl w-full"></div>
     </div>;
+  }
+  
+  if (!kpis) {
+    return <div className="p-8 text-center text-navy-500">No dashboard data available.</div>;
   }
 
   return (

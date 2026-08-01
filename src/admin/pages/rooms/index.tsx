@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRoomStore } from '../../stores/useRoomStore';
+import { useBookingsStore } from '../../stores/useBookingsStore';
 import { useNavigate } from 'react-router-dom';
 import { Plus, Users, LayoutDashboard, Calendar as CalendarIcon } from 'lucide-react';
 import { supabase } from '../../utils/supabaseClient';
@@ -8,33 +9,18 @@ import { MiniCalendar } from '../../components/bookings/MiniCalendar';
 
 export const Rooms = () => {
   const { roomTypes, fetchRoomTypes, inventory, fetchInventory, isLoading } = useRoomStore();
-  const [bookings, setBookings] = React.useState<Booking[]>([]);
   const navigate = useNavigate();
   const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
   const basePath = isLocal ? '/admin' : '';
+  const { bookings, fetchBookings } = useBookingsStore();
 
   useEffect(() => {
     fetchRoomTypes();
     fetchInventory();
-    
-    const fetchBookings = async () => {
-      const { data } = await supabase.from('bookings').select('*').in('status', ['pending', 'confirmed']);
-      if (data) {
-        setBookings(data.map(b => ({
-          id: b.id,
-          guestName: b.guest_name,
-          roomTypeId: b.room_type_id,
-          checkIn: b.check_in,
-          checkOut: b.check_out,
-          numberOfRooms: b.number_of_rooms,
-          status: b.status
-        })) as Booking[]);
-      }
-    };
     fetchBookings();
-  }, [fetchRoomTypes, fetchInventory]);
+  }, [fetchRoomTypes, fetchInventory, fetchBookings]);
 
-  if (isLoading) {
+  if (isLoading && roomTypes.length === 0) {
     return <div className="animate-pulse space-y-6">
       <div className="h-48 bg-slate-200 rounded-xl w-full max-w-md"></div>
     </div>;

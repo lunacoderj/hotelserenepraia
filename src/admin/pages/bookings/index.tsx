@@ -87,7 +87,7 @@ export const Bookings = () => {
     return roomTypes.find(r => r.id === id)?.title || 'Unknown Room';
   };
 
-  if (isLoading) return <div className="p-8 text-navy">Loading bookings...</div>;
+  if (isLoading && bookings.length === 0) return <div className="p-8 text-navy">Loading bookings...</div>;
 
   return (
     <div className="space-y-8">

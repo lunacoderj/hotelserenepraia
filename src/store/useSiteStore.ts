@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import { supabase, hasSupabaseConfig } from '../admin/utils/supabaseClient';
 import { RoomType } from '../admin/types';
 
@@ -9,7 +10,9 @@ interface SiteStore {
   fetchRooms: () => Promise<void>;
 }
 
-export const useSiteStore = create<SiteStore>((set) => ({
+export const useSiteStore = create<SiteStore>()(
+  persist(
+    (set) => ({
   rooms: [],
   isLoading: true,
   error: null,
@@ -19,7 +22,6 @@ export const useSiteStore = create<SiteStore>((set) => ({
     
     if (!hasSupabaseConfig) {
       set({ 
-        rooms: [], 
         isLoading: false, 
         error: 'Supabase is not configured. Please add your keys to .env and run the Seed Database tool in the Admin Settings.' 
       });
@@ -45,7 +47,15 @@ export const useSiteStore = create<SiteStore>((set) => ({
       set({ rooms: formattedRooms, isLoading: false });
     } catch (err: any) {
       console.error('Error fetching rooms:', err);
-      set({ error: err.message, isLoading: false, rooms: [] });
+      set({ error: err.message, isLoading: false });
     }
-  }
-}));
+  },
+    }),
+    {
+      name: 'hsp-site-storage',
+      partialize: (state) => ({ 
+        rooms: state.rooms
+      }),
+    }
+  )
+);
