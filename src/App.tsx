@@ -51,6 +51,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
   useEffect(() => {
     initGA()
@@ -93,8 +94,8 @@ function App() {
           <Route path="/guide/:slug" element={<Layout><GuidePage /></Layout>} />
           <Route path="/offers/:slug" element={<Layout><OfferLayout /></Layout>} />
           <Route path="/claim-offer/:id" element={<ClaimOffer />} />
-          {/* Keep /admin available on the main domain just in case, or for local dev */}
-          <Route path="/admin/*" element={<AdminRoutes />} />
+          {/* Only allow /admin path access in local development */}
+          {isLocal && <Route path="/admin/*" element={<AdminRoutes />} />}
           <Route path="*" element={<Layout><NotFound /></Layout>} />
         </Routes>
       )}
