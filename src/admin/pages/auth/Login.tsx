@@ -9,6 +9,8 @@ export const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  const basePath = isLocal ? '/admin' : '';
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +28,7 @@ export const Login = () => {
       }
 
       if (data.session) {
-        navigate('/admin/dashboard');
+        navigate(`${basePath}/dashboard`);
       }
     } catch (err: any) {
       setError(err.message || 'Failed to login');

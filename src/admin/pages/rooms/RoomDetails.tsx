@@ -120,6 +120,8 @@ const BookingStatusTab = ({ room }: { room: RoomType }) => {
 export const RoomDetails = () => {
   const { roomType } = useParams<{ roomType: string }>();
   const navigate = useNavigate();
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  const basePath = isLocal ? '/admin' : '';
   const { roomTypes, fetchRoomTypes } = useRoomStore();
   const [activeTab, setActiveTab] = useState('general');
 
@@ -146,7 +148,7 @@ export const RoomDetails = () => {
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4">
           <button 
-            onClick={() => navigate('/admin/rooms')}
+            onClick={() => navigate(`${basePath}/rooms`)}
             className="p-2 hover:bg-navy/5 rounded-full transition-colors"
           >
             <ArrowLeft className="w-5 h-5 text-navy" />

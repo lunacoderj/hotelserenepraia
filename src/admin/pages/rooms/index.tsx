@@ -10,6 +10,8 @@ export const Rooms = () => {
   const { roomTypes, fetchRoomTypes, inventory, fetchInventory, isLoading } = useRoomStore();
   const [bookings, setBookings] = React.useState<Booking[]>([]);
   const navigate = useNavigate();
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  const basePath = isLocal ? '/admin' : '';
 
   useEffect(() => {
     fetchRoomTypes();
@@ -73,7 +75,7 @@ export const Rooms = () => {
           return (
             <div 
               key={type.id}
-              onClick={() => navigate(`/admin/rooms/${type.id}`)}
+              onClick={() => navigate(`${basePath}/rooms/${type.id}`)}
               className="bg-white rounded-xl border border-navy/5 shadow-sm overflow-hidden hover:shadow-md transition-all cursor-pointer group flex flex-col"
             >
               <div className="h-48 relative overflow-hidden">
