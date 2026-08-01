@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gift, X, ArrowUp, Phone, MessageCircle, Calendar, Sparkles, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { CONTACT_CONFIG } from '../../config/contacts';
 
 const OFFERS = [
@@ -53,8 +53,13 @@ export const GlobalOverlays = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [selectedOffer, setSelectedOffer] = useState('deluxe-offer');
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isAdminRoute = location.pathname.startsWith('/admin');
 
   useEffect(() => {
+    if (isAdminRoute) return;
+
     // Show offer popup after 1 minute (60000ms)
     const timer = setTimeout(() => {
       setShowOfferPopup(true);
@@ -105,6 +110,8 @@ export const GlobalOverlays = () => {
   };
 
   const activeOffer = OFFERS.find(o => o.id === selectedOffer) || OFFERS[0];
+
+  if (isAdminRoute) return null;
 
   return (
     <>

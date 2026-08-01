@@ -85,17 +85,21 @@ export const About = () => {
             Nestled along the pristine coastline of Rushikonda, Hotel Serene Praia offers an unparalleled blend of architectural elegance and natural beauty. Every detail is crafted to provide a sanctuary where modern luxury meets coastal charm.
           </p>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 mb-8 md:mb-10 border-t border-white/10 pt-6 md:pt-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 md:mb-10 border-t border-white/10 pt-6 md:pt-8">
             <div>
-              <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">4<span className="text-gold">+</span></span>
-              <span className="font-body text-[8px] sm:text-[10px] uppercase tracking-widest text-pearl/60">Luxury Categories</span>
+              <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">4</span>
+              <span className="font-body text-[8px] sm:text-[10px] uppercase tracking-widest text-pearl/60">Categories</span>
             </div>
             <div>
-              <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">21<span className="text-gold">+</span></span>
+              <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">21</span>
               <span className="font-body text-[8px] sm:text-[10px] uppercase tracking-widest text-pearl/60">Rooms</span>
             </div>
             <div>
-              <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">5<span className="text-gold">★★★★★</span></span>
+              <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">2</span>
+              <span className="font-body text-[8px] sm:text-[10px] uppercase tracking-widest text-pearl/60">Banquet Halls</span>
+            </div>
+            <div>
+              <span className="block font-display text-heading-md sm:text-heading-lg text-pearl mb-1">5<span className="text-gold text-sm ml-1">★</span></span>
               <span className="font-body text-[8px] sm:text-[10px] uppercase tracking-widest text-pearl/60">Service Quality</span>
             </div>
           </div>

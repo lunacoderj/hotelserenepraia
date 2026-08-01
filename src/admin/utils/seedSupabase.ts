@@ -1,6 +1,5 @@
-import { Room } from '../types';
-
-export const roomsData: Room[] = [
+import { supabase } from './supabaseClient';
+const roomsData = [
   {
     id: 'deluxe',
     name: 'Deluxe Room',
@@ -148,3 +147,117 @@ export const roomsData: Room[] = [
     }
   }
 ];
+
+const generateInventory = () => {
+  const inventory = [];
+
+  // 2 Deluxe Rooms (D101 - D102)
+  for (let i = 1; i <= 2; i++) {
+    inventory.push({
+      id: `D10${i}`,
+      room_number: `D10${i}`,
+      room_type_id: 'deluxe',
+      status: 'Available',
+      floor: 1,
+    });
+  }
+
+  // 12 Premium Rooms (P201 - P212)
+  for (let i = 1; i <= 12; i++) {
+    const num = i < 10 ? `0${i}` : i;
+    inventory.push({
+      id: `P2${num}`,
+      room_number: `P2${num}`,
+      room_type_id: 'premium',
+      status: 'Available',
+      floor: 2,
+    });
+  }
+
+  // 6 Suite Rooms (S301 - S306)
+  for (let i = 1; i <= 6; i++) {
+    inventory.push({
+      id: `S30${i}`,
+      room_number: `S30${i}`,
+      room_type_id: 'suite',
+      status: 'Available',
+      floor: 3,
+    });
+  }
+
+  // 1 Executive Room (E401)
+  inventory.push({
+    id: 'E401',
+    room_number: 'E401',
+    room_type_id: 'executive',
+    status: 'Available',
+    floor: 4,
+  });
+
+  return inventory;
+};
+
+export const seedSupabaseDatabase = async () => {
+  try {
+    console.log('Seeding Room Types...');
+    
+    // Transform frontend roomsData to match Postgres schema
+    const formattedRooms = roomsData.map(room => {
+      // Map gallery to Supabase JSON images
+      const images = [
+        { id: 'main', url: room.images.main, isFeatured: true, order: 0 },
+        ...room.images.gallery.map((url, idx) => ({
+          id: `gal-${idx}`,
+          url,
+          isFeatured: false,
+          order: idx + 1
+        }))
+      ];
+
+      return {
+        id: room.id,
+        title: room.name,
+        subtitle: room.shortDescription,
+        description: room.description,
+        amenities: room.amenities,
+        capacity: room.capacity,
+        beds: room.bedType,
+        bathrooms: 1, // Defaulting to 1 based on previous data
+        area: room.size,
+        pricing: {
+          standard: room.actualPrice,
+          weekend: room.actualPrice + 500, // Example weekend logic
+          festival: room.actualPrice + 1000,
+          seasonal: room.actualPrice,
+          holiday: room.actualPrice + 1500,
+          custom: room.offerPrice,
+        },
+        images,
+        seo_title: `${room.name} | Hotel Serene Praia`,
+        seo_description: room.shortDescription,
+        seo_slug: room.slug
+      };
+    });
+
+    const { error: roomError } = await supabase
+      .from('room_types')
+      .upsert(formattedRooms);
+
+    if (roomError) throw roomError;
+
+    console.log('Seeding Inventory...');
+    const inventory = generateInventory();
+
+    const { error: invError } = await supabase
+      .from('inventory')
+      .upsert(inventory);
+
+    if (invError) throw invError;
+
+    console.log('Seeding Complete!');
+    return true;
+  } catch (error) {
+    console.error('Error seeding database:', error);
+    return false;
+  }
+};

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { SEO_CONFIG } from '../../config/seo';
 import { AGGREGATE_RATING, GUEST_REVIEWS } from '../../data/seoData';
-import { roomsData } from '../../data/rooms';
+import { useSiteStore } from '../../store/useSiteStore';
 
 // ─────────────────────────────────────────────────
 // Global Schema — Hotel, Organization, WebSite, LocalBusiness
@@ -202,18 +202,21 @@ interface RoomSchemaProps {
 }
 
 export const RoomSchema: React.FC<RoomSchemaProps> = ({ roomSlug }) => {
-  const room = roomsData.find(r => r.slug === roomSlug);
+  const { rooms } = useSiteStore();
+  const room = rooms.find(r => r.seoSlug === roomSlug);
   if (!room) return null;
+
+  const mainImage = room.images.find((img: any) => img.isFeatured)?.url || room.images[0]?.url || SEO_CONFIG.defaultOgImage;
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'HotelRoom',
-    name: `${room.name} at ${SEO_CONFIG.siteName}`,
+    name: `${room.title} at ${SEO_CONFIG.siteName}`,
     description: room.description,
-    image: room.images.main,
+    image: mainImage,
     bed: {
       '@type': 'BedDetails',
-      typeOfBed: room.bedType,
+      typeOfBed: room.beds,
       numberOfBeds: 1,
     },
     occupancy: {
@@ -228,12 +231,12 @@ export const RoomSchema: React.FC<RoomSchemaProps> = ({ roomSlug }) => {
     })),
     offers: {
       '@type': 'Offer',
-      name: `${room.name} — Best Rate`,
-      price: room.offerPrice,
+      name: `${room.title} — Best Rate`,
+      price: room.pricing?.custom || room.pricing?.standard,
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
       validFrom: new Date().toISOString().split('T')[0],
-      url: `${SEO_CONFIG.siteUrl}/rooms/${room.slug}`,
+      url: `${SEO_CONFIG.siteUrl}/rooms/${room.seoSlug}`,
       priceValidUntil: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     },
   };
@@ -251,18 +254,24 @@ export const RoomSchema: React.FC<RoomSchemaProps> = ({ roomSlug }) => {
 // ─────────────────────────────────────────────────
 
 export const RoomsListSchema: React.FC = () => {
+  const { rooms } = useSiteStore();
+  if (!rooms || rooms.length === 0) return null;
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Rooms & Suites at Hotel Serene Praia',
-    numberOfItems: roomsData.length,
-    itemListElement: roomsData.map((room, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      url: `${SEO_CONFIG.siteUrl}/rooms/${room.slug}`,
-      name: room.name,
-      image: room.images.main,
-    })),
+    numberOfItems: rooms.length,
+    itemListElement: rooms.map((room, index) => {
+      const mainImage = room.images.find((img: any) => img.isFeatured)?.url || room.images[0]?.url;
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${SEO_CONFIG.siteUrl}/rooms/${room.seoSlug}`,
+        name: room.title,
+        image: mainImage,
+      };
+    }),
   };
 
   return (

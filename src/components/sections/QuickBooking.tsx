@@ -2,7 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LuxuryButton } from '../ui/Button';
 import { CONTACT_CONFIG } from '../../config/contacts';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Loader2 } from 'lucide-react';
+import { supabase } from '../../admin/utils/supabaseClient';
+import { useSiteStore } from '../../store/useSiteStore';
 
 const CustomDropdown = ({ label, options, value, onChange, border = true }: { label: string, options: {value: string, label: string}[], value: string, onChange: (val: string) => void, border?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,31 +65,93 @@ const CustomDropdown = ({ label, options, value, onChange, border = true }: { la
 };
 
 export const QuickBooking = () => {
+  const { rooms } = useSiteStore();
+  
   const today = new Date().toISOString().split('T')[0];
   const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
   
   const [checkIn, setCheckIn] = useState(today);
   const [checkOut, setCheckOut] = useState(tomorrow);
   const [guests, setGuests] = useState('2 Adults + 1 Child');
+  const [duration, setDuration] = useState('Full Day');
   const [room, setRoom] = useState('deluxe');
+  const [isChecking, setIsChecking] = useState(false);
 
-  const handleBooking = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  // Dynamic room options from the DB
+  const roomOptions = rooms.length > 0 
+    ? rooms.map(r => ({ value: r.seoSlug || r.id, label: r.title }))
+    : [
+        { value: 'deluxe', label: 'Deluxe Room' },
+        { value: 'premium', label: 'Premium Room' },
+        { value: 'suite', label: 'Suite Room' },
+        { value: 'executive', label: 'Executive Room' },
+      ];
+
+  const selectedRoom = rooms.find(r => (r.seoSlug || r.id) === room);
+  const isBanquet = selectedRoom?.title?.toLowerCase().includes('banquet') || room.includes('banquet');
+
+  const handleBooking = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    setIsChecking(true);
     
-    let message = 'Hello Hotel Serene Praia! I would like to check availability.';
-    
-    if (checkIn || checkOut) {
-      message += `\n\nDates: ${checkIn || 'Any'} to ${checkOut || 'Any'}`;
+    try {
+      const roomId = selectedRoom?.id || room;
+      const queryCheckOut = isBanquet ? checkIn : checkOut;
+
+      // 1. Get total physical inventory for this room type
+      const { data: invData } = await supabase
+        .from('inventory')
+        .select('id')
+        .eq('room_type_id', roomId)
+        .neq('status', 'Maintenance');
+        
+      const totalInventory = invData?.length || 0;
+
+      // 2. Get overlapping confirmed/pending bookings
+      const { data: bookingsData } = await supabase
+        .from('bookings')
+        .select('number_of_rooms')
+        .eq('room_type_id', roomId)
+        .in('status', ['pending', 'confirmed'])
+        .lte('check_in', queryCheckOut)
+        .gte('check_out', checkIn);
+
+      const bookedRooms = bookingsData?.reduce((sum, b) => sum + (b.number_of_rooms || 1), 0) || 0;
+
+      const availableRooms = totalInventory - bookedRooms;
+
+      if (availableRooms <= 0) {
+        alert("Sorry, this room type is fully booked for your selected dates. Please try different dates or another room type.");
+        setIsChecking(false);
+        return;
+      }
+
+      // If available, proceed to WhatsApp
+      let message = 'Hello Hotel Serene Praia! I would like to check availability.';
+      if (isBanquet) {
+        message += `\n\nDate: ${checkIn || 'Any'}`;
+        message += `\nDuration: ${duration}`;
+      } else {
+        if (checkIn || checkOut) {
+          message += `\n\nDates: ${checkIn || 'Any'} to ${checkOut || 'Any'}`;
+        }
+        message += `\nGuests: ${guests}`;
+      }
+      
+      const roomName = selectedRoom?.title || `${room.charAt(0).toUpperCase() + room.slice(1)} Room`;
+      message += `\nPreference: ${roomName}`;
+      message += `\n\n(System shows ${availableRooms} available!)`;
+      
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${CONTACT_CONFIG.whatsapp.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
+      
+      window.open(whatsappUrl, '_blank');
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong while checking availability. Please contact us directly.");
+    } finally {
+      setIsChecking(false);
     }
-    
-    const roomName = `${room.charAt(0).toUpperCase() + room.slice(1)} Room`;
-    message += `\nGuests: ${guests}`;
-    message += `\nPreference: ${roomName}`;
-    
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${CONTACT_CONFIG.whatsapp.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
-    
-    window.open(whatsappUrl, '_blank');
   };
 
   const guestOptions = [
@@ -95,11 +159,12 @@ export const QuickBooking = () => {
     { value: 'Custom (Contact Us)', label: 'Custom (Contact Us)' },
   ];
 
-  const roomOptions = [
-    { value: 'deluxe', label: 'Deluxe Room' },
-    { value: 'premium', label: 'Premium Room' },
-    { value: 'suite', label: 'Suite Room' },
-    { value: 'executive', label: 'Executive Room' },
+  const durationOptions = [
+    { value: '3 Hours', label: '3 Hours' },
+    { value: '6 Hours', label: '6 Hours' },
+    { value: '9 Hours', label: '9 Hours' },
+    { value: '12 Hours', label: '12 Hours' },
+    { value: 'Full Day', label: 'Full Day' },
   ];
 
   return (
@@ -125,25 +190,37 @@ export const QuickBooking = () => {
               />
             </div>
             
-            {/* Check Out */}
-            <div className="flex flex-col gap-1 border-r md:border-r border-white/10 pr-4">
-              <span className="text-[10px] tracking-widest uppercase text-pearl/50 font-body">Check Out</span>
-              <input 
-                type="date" 
-                value={checkOut}
-                onChange={(e) => setCheckOut(e.target.value)}
-                className="bg-transparent text-body-sm text-pearl outline-none [color-scheme:dark] py-1" 
-              />
-            </div>
+            {/* Check Out (Hidden for Banquets) */}
+            {!isBanquet && (
+              <div className="flex flex-col gap-1 border-r md:border-r border-white/10 pr-4">
+                <span className="text-[10px] tracking-widest uppercase text-pearl/50 font-body">Check Out</span>
+                <input 
+                  type="date" 
+                  value={checkOut}
+                  onChange={(e) => setCheckOut(e.target.value)}
+                  className="bg-transparent text-body-sm text-pearl outline-none [color-scheme:dark] py-1" 
+                />
+              </div>
+            )}
             
-            {/* Guests Custom Dropdown */}
-            <CustomDropdown 
-              label="Guests" 
-              options={guestOptions} 
-              value={guests} 
-              onChange={setGuests} 
-              border={true}
-            />
+            {/* Dynamic Options based on type */}
+            {isBanquet ? (
+              <CustomDropdown 
+                label="Duration" 
+                options={durationOptions} 
+                value={duration} 
+                onChange={setDuration} 
+                border={true}
+              />
+            ) : (
+              <CustomDropdown 
+                label="Guests" 
+                options={guestOptions} 
+                value={guests} 
+                onChange={setGuests} 
+                border={true}
+              />
+            )}
             
             {/* Room Custom Dropdown */}
             <CustomDropdown 
@@ -156,13 +233,15 @@ export const QuickBooking = () => {
           </div>
 
           <div className="w-full md:w-auto">
-            <a 
-              href="#" 
+            <button 
               onClick={handleBooking}
-              className="w-full inline-block"
+              disabled={isChecking}
+              className="w-full inline-block disabled:opacity-70"
             >
-              <LuxuryButton variant="primary" className="w-full">Check Availability</LuxuryButton>
-            </a>
+              <LuxuryButton variant="primary" className="w-full flex items-center justify-center gap-2">
+                {isChecking ? <><Loader2 className="w-4 h-4 animate-spin" /> Checking...</> : 'Check Availability'}
+              </LuxuryButton>
+            </button>
           </div>
 
         </div>

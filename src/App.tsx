@@ -19,13 +19,17 @@ import { ClaimOffer } from './pages/offers/ClaimOffer'
 import { NearbyLanding } from './pages/NearbyLanding'
 import { GuidePage } from './pages/GuidePage'
 import { NotFound } from './pages/NotFound'
+import { AdminRoutes } from './admin/AdminRoutes'
+
+import { initGA, logPageView } from './utils/analytics'
 
 // ScrollToTop component to handle route changes
 const ScrollToTop = () => {
-  const { pathname } = useLocation()
+  const { pathname, search } = useLocation()
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname])
+    logPageView();
+  }, [pathname, search])
   return null
 }
 
@@ -49,6 +53,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    initGA()
     // Simulate initial loading sequence (assets, fonts, etc)
     const timer = setTimeout(() => {
       setIsLoading(false)
@@ -57,28 +62,42 @@ function App() {
   }, [])
 
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <ScrollToTop />
       <LoadingScreen isLoading={isLoading} />
       <GlobalOverlays />
       <GlobalSchema />
       <SiteNavigationSchema />
-      <Routes>
-        <Route path="/" element={<Layout><Home /></Layout>} />
-        <Route path="/rooms" element={<Layout><Rooms /></Layout>} />
-        <Route path="/rooms/:slug" element={<Layout><RoomDetails /></Layout>} />
-        <Route path="/banquet" element={<Layout><Banquet /></Layout>} />
-        <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
-        <Route path="/contact" element={<Layout><Contact /></Layout>} />
-        <Route path="/about" element={<Layout><About /></Layout>} />
-        <Route path="/restaurant" element={<Layout><Restaurant /></Layout>} />
-        <Route path="/attractions" element={<Layout><NearbyAttractions /></Layout>} />
-        <Route path="/nearby/:slug" element={<Layout><NearbyLanding /></Layout>} />
-        <Route path="/guide/:slug" element={<Layout><GuidePage /></Layout>} />
-        <Route path="/offers/:slug" element={<Layout><OfferLayout /></Layout>} />
-        <Route path="/claim-offer/:id" element={<ClaimOffer />} />
-        <Route path="*" element={<Layout><NotFound /></Layout>} />
-      </Routes>
+      
+      {/* 
+        Subdomain Routing: 
+        If the user is on admin.hotelserenepraia.in, only load the AdminRoutes.
+        For local development, we fallback to checking if the path starts with /admin.
+      */}
+      {window.location.hostname.startsWith('admin.') || window.location.hostname === 'hsp-admin.vercel.app' ? (
+        <Routes>
+          <Route path="/*" element={<AdminRoutes />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Layout><Home /></Layout>} />
+          <Route path="/rooms" element={<Layout><Rooms /></Layout>} />
+          <Route path="/rooms/:slug" element={<Layout><RoomDetails /></Layout>} />
+          <Route path="/banquet" element={<Layout><Banquet /></Layout>} />
+          <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
+          <Route path="/contact" element={<Layout><Contact /></Layout>} />
+          <Route path="/about" element={<Layout><About /></Layout>} />
+          <Route path="/restaurant" element={<Layout><Restaurant /></Layout>} />
+          <Route path="/attractions" element={<Layout><NearbyAttractions /></Layout>} />
+          <Route path="/nearby/:slug" element={<Layout><NearbyLanding /></Layout>} />
+          <Route path="/guide/:slug" element={<Layout><GuidePage /></Layout>} />
+          <Route path="/offers/:slug" element={<Layout><OfferLayout /></Layout>} />
+          <Route path="/claim-offer/:id" element={<ClaimOffer />} />
+          {/* Keep /admin available on the main domain just in case, or for local dev */}
+          <Route path="/admin/*" element={<AdminRoutes />} />
+          <Route path="*" element={<Layout><NotFound /></Layout>} />
+        </Routes>
+      )}
     </BrowserRouter>
   )
 }

@@ -3,10 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Wifi, Tv, Wind, Coffee, Bath, Car, Utensils, Music, Waves, Check } from 'lucide-react';
 import { offersData } from '../../data/offers';
-import { roomsData } from '../../data/rooms';
 import { CONTACT_CONFIG } from '../../config/contacts';
 import { SEOHead } from '../../components/common/SEOHead';
 import { Breadcrumbs } from '../../components/common/Breadcrumbs';
+import { useSiteStore } from '../../store/useSiteStore';
+import { supabase } from '../../admin/utils/supabaseClient';
 
 const getIconForAmenity = (feature: string) => {
   const text = feature.toLowerCase();
@@ -72,22 +73,30 @@ export const ClaimOffer = () => {
     specialRequest: ''
   });
 
+  const { rooms, fetchRooms, isLoading } = useSiteStore();
+
+  useEffect(() => {
+    fetchRooms();
+  }, [fetchRooms]);
+
   const offer = offersData.find(o => o.id === id);
-  const roomDetails = roomsData.find(r => r.id === id);
+  const roomDetails = rooms.find(r => r.id === id);
   
   const amenities = roomDetails ? roomDetails.amenities : offer?.features || [];
-  const gallery = roomDetails?.images?.gallery || (offer ? [offer.image] : []);
+  const gallery = roomDetails?.images.map((img: any) => img.url) || (offer ? [offer.image] : []);
 
   useEffect(() => {
     if (!offer) {
       navigate('/');
       return;
     }
+    if (isLoading) return; // Wait for rooms to load
+    
     const timer = setTimeout(() => {
       setPhase('hero');
     }, 3500); // Cinematic sequence length
     return () => clearTimeout(timer);
-  }, [offer, navigate]);
+  }, [offer, navigate, isLoading]);
 
   if (!offer) return null;
 
@@ -95,12 +104,32 @@ export const ClaimOffer = () => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleBooking = (e: React.FormEvent) => {
+  const handleBooking = async (e: React.FormEvent) => {
     e.preventDefault();
     setPhase('success');
     
+    // 1. Insert into Supabase
+    try {
+      await supabase.from('bookings').insert({
+        guest_name: formData.name,
+        guest_phone: formData.phone,
+        room_type_id: offer.id,
+        check_in: formData.checkIn,
+        check_out: formData.checkOut,
+        adults: parseInt(formData.adults) || 2,
+        children: parseInt(formData.children) || 0,
+        number_of_rooms: parseInt(formData.rooms) || 1,
+        special_requests: formData.specialRequest,
+        total_price: offer.offerPrice * calcNights(),
+        status: 'pending'
+      });
+    } catch (err) {
+      console.error('Failed to save booking to database', err);
+    }
+
+    // 2. Open WhatsApp
     setTimeout(() => {
-      const text = `Hello Hotel Serene Praia,\n\nI would like to claim the Instagram Exclusive Offer.\n\nRoom: ${offer.title}\n\nName: ${formData.name}\nPhone: ${formData.phone}\nGuests: 2 Adults + 1 Child\nRooms: 1\nCheck-in: ${formData.checkIn}\nCheck-out: ${formData.checkOut}\nArrival Time: ${formData.arrivalTime}\nSpecial Request: ${formData.specialRequest || 'None'}\n\nPlease confirm availability.\n\nThank you.`;
+      const text = `Hello Hotel Serene Praia,\n\nI would like to claim the Instagram Exclusive Offer.\n\nRoom: ${offer.title}\n\nName: ${formData.name}\nPhone: ${formData.phone}\nGuests: ${formData.adults} Adults + ${formData.children} Child\nRooms: ${formData.rooms}\nCheck-in: ${formData.checkIn}\nCheck-out: ${formData.checkOut}\nArrival Time: ${formData.arrivalTime}\nSpecial Request: ${formData.specialRequest || 'None'}\n\nPlease confirm availability.\n\nThank you.`;
       const whatsappUrl = `https://wa.me/${CONTACT_CONFIG.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(text)}`;
       window.location.href = whatsappUrl;
     }, 2500);
