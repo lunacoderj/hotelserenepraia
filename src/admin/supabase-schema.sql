@@ -41,23 +41,23 @@ ALTER TABLE room_types ENABLE ROW LEVEL SECURITY;
 ALTER TABLE inventory ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Allow public read access for room_types" ON room_types FOR SELECT USING (true);
-CREATE POLICY "Allow public insert access for room_types" ON room_types FOR INSERT WITH CHECK (true);
-CREATE POLICY "Allow public update access for room_types" ON room_types FOR UPDATE USING (true);
-CREATE POLICY "Allow public delete access for room_types" ON room_types FOR DELETE USING (true);
+CREATE POLICY "Allow authenticated insert access for room_types" ON room_types FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "Allow authenticated update access for room_types" ON room_types FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "Allow authenticated delete access for room_types" ON room_types FOR DELETE TO authenticated USING (true);
 
-CREATE POLICY "Allow public read access for inventory" ON inventory FOR SELECT USING (true);
-CREATE POLICY "Allow public insert access for inventory" ON inventory FOR INSERT WITH CHECK (true);
-CREATE POLICY "Allow public update access for inventory" ON inventory FOR UPDATE USING (true);
-CREATE POLICY "Allow public delete access for inventory" ON inventory FOR DELETE USING (true);
+CREATE POLICY "Allow authenticated read access for inventory" ON inventory FOR SELECT TO authenticated USING (true);
+CREATE POLICY "Allow authenticated insert access for inventory" ON inventory FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "Allow authenticated update access for inventory" ON inventory FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "Allow authenticated delete access for inventory" ON inventory FOR DELETE TO authenticated USING (true);
 
 -- Create a storage bucket for room images if it doesn't exist
 INSERT INTO storage.buckets (id, name, public) VALUES ('hotel-images', 'hotel-images', true) ON CONFLICT DO NOTHING;
 
 -- Allow public access to the bucket
 CREATE POLICY "Allow public viewing of images" ON storage.objects FOR SELECT USING (bucket_id = 'hotel-images');
-CREATE POLICY "Allow public uploading of images" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'hotel-images');
-CREATE POLICY "Allow public updating of images" ON storage.objects FOR UPDATE USING (bucket_id = 'hotel-images');
-CREATE POLICY "Allow public deletion of images" ON storage.objects FOR DELETE USING (bucket_id = 'hotel-images');
+CREATE POLICY "Allow authenticated uploading of images" ON storage.objects FOR INSERT TO authenticated WITH CHECK (bucket_id = 'hotel-images');
+CREATE POLICY "Allow authenticated updating of images" ON storage.objects FOR UPDATE TO authenticated USING (bucket_id = 'hotel-images');
+CREATE POLICY "Allow authenticated deletion of images" ON storage.objects FOR DELETE TO authenticated USING (bucket_id = 'hotel-images');
 
 -- Create bookings table
 CREATE TABLE bookings (
@@ -80,7 +80,7 @@ CREATE TABLE bookings (
 
 ALTER TABLE bookings ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY "Allow public read access for bookings" ON bookings FOR SELECT USING (true);
+CREATE POLICY "Allow authenticated read access for bookings" ON bookings FOR SELECT TO authenticated USING (true);
 CREATE POLICY "Allow public insert access for bookings" ON bookings FOR INSERT WITH CHECK (true);
-CREATE POLICY "Allow public update access for bookings" ON bookings FOR UPDATE USING (true);
-CREATE POLICY "Allow public delete access for bookings" ON bookings FOR DELETE USING (true);
+CREATE POLICY "Allow authenticated update access for bookings" ON bookings FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "Allow authenticated delete access for bookings" ON bookings FOR DELETE TO authenticated USING (true);
