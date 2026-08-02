@@ -51,6 +51,12 @@ export const BookingCalendar: React.FC<BookingCalendarProps> = ({ bookings, room
     return roomTypes.find(r => r.id === roomTypeId)?.title || 'Unknown Room';
   };
 
+  const formatSafeDate = (d: string | undefined | null) => {
+    if (!d) return 'N/A';
+    const date = new Date(d);
+    return isNaN(date.getTime()) ? 'N/A' : date.toLocaleDateString(undefined, {month: 'short', day: 'numeric'});
+  };
+
   return (
     <div className="bg-white rounded-xl border border-navy/5 shadow-sm p-6 mb-8 overflow-hidden">
       <div className="flex justify-between items-center mb-6">
@@ -149,8 +155,8 @@ export const BookingCalendar: React.FC<BookingCalendarProps> = ({ bookings, room
                 </p>
                 <div className="space-y-2 max-h-[150px] overflow-y-auto custom-scrollbar pr-1 pointer-events-auto">
                   {hoverData.bookings.map((b, i) => {
-                    const checkInDate = new Date(b.checkIn).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
-                    const checkOutDate = new Date(b.checkOut).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+                    const checkInDate = formatSafeDate(b.checkIn);
+                    const checkOutDate = formatSafeDate(b.checkOut);
                     
                     return (
                       <div key={b.id + i} className="flex items-center gap-3">

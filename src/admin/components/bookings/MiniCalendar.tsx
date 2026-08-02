@@ -9,7 +9,18 @@ interface MiniCalendarProps {
   showLabels?: boolean;
 }
 
-export const MiniCalendar: React.FC<MiniCalendarProps> = ({ typeId, bookings, totalInventory, onHover, showLabels = true }) => {
+export const MiniCalendar: React.FC<MiniCalendarProps> = ({ 
+  typeId, 
+  bookings, 
+  totalInventory,
+  onHover,
+  showLabels = true
+}) => {
+  const formatSafeDate = (d: string | undefined | null) => {
+    if (!d) return 'N/A';
+    const date = new Date(d);
+    return isNaN(date.getTime()) ? 'N/A' : date.toLocaleDateString(undefined, {month: 'numeric', day: 'numeric'});
+  };
   const days = useMemo(() => {
     const arr = [];
     const today = new Date();
@@ -57,12 +68,14 @@ export const MiniCalendar: React.FC<MiniCalendarProps> = ({ typeId, bookings, to
               {dayBookings.length > 0 && (
                 <div className="absolute opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy text-white text-[10px] px-3 py-2 rounded-lg whitespace-nowrap z-10 shadow-xl border border-white/10">
                   <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-navy rotate-45 border-b border-r border-white/10"></div>
-                  <p className="font-bold text-gold mb-1 border-b border-white/10 pb-1">{new Date(dateString).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}</p>
+                  <p className="font-bold text-gold mb-1 border-b border-white/10 pb-1">
+                    {isNaN(new Date(dateString).getTime()) ? 'Invalid Date' : new Date(dateString).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
+                  </p>
                   <div className="flex flex-col gap-1 mt-1">
                     {dayBookings.map((b, i) => (
                       <div key={i} className="flex justify-between gap-4">
-                        <span className="text-white/90">{b.guestName || 'Blocked'}</span>
-                        <span className="text-white/50">{new Date(b.checkIn).toLocaleDateString(undefined, {month: 'numeric', day: 'numeric'})} - {new Date(b.checkOut).toLocaleDateString(undefined, {month: 'numeric', day: 'numeric'})}</span>
+                        <span className="text-white/90">{b.guestName ? b.guestName.split(' ')[0] : 'Blocked'}</span>
+                        <span className="text-white/50">{formatSafeDate(b.checkIn)} - {formatSafeDate(b.checkOut)}</span>
                       </div>
                     ))}
                   </div>

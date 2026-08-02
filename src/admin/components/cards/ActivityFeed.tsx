@@ -38,7 +38,9 @@ export const ActivityFeed: React.FC<ActivityFeedProps> = ({ activities }) => {
               <div className="flex-1 pt-1.5">
                 <p className="text-sm text-navy font-medium leading-none mb-1">{activity.message}</p>
                 <p className="text-xs text-navy-500/60">
-                  {formatDistanceToNow(new Date(activity.timestamp), { addSuffix: true })}
+                  {activity.timestamp && !isNaN(new Date(activity.timestamp).getTime()) 
+                    ? formatDistanceToNow(new Date(activity.timestamp), { addSuffix: true }) 
+                    : 'Recently'}
                 </p>
               </div>
             </div>

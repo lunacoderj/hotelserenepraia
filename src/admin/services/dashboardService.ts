@@ -82,7 +82,7 @@ export const dashboardService = {
       id: b.id,
       type: b.status === 'pending' ? 'booking_created' : 'booking_cancelled',
       message: `${b.guest_name} - ${b.status}`,
-      timestamp: new Date(b.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      timestamp: b.created_at
     }));
   },
 

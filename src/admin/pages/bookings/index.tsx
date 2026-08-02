@@ -87,6 +87,12 @@ export const Bookings = () => {
     return roomTypes.find(r => r.id === id)?.title || 'Unknown Room';
   };
 
+  const formatDate = (dateStr: string | undefined | null) => {
+    if (!dateStr) return 'N/A';
+    const d = new Date(dateStr);
+    return isNaN(d.getTime()) ? 'Invalid Date' : d.toLocaleDateString();
+  };
+
   if (isLoading && bookings.length === 0) return <div className="p-8 text-navy">Loading bookings...</div>;
 
   return (
@@ -141,7 +147,7 @@ export const Bookings = () => {
                   <td className="py-4 px-6">
                     <p className="font-medium text-navy text-sm">{getRoomName(booking.roomTypeId)}</p>
                     <p className="text-xs text-navy-500 mt-1">
-                      {new Date(booking.checkIn).toLocaleDateString()} to {new Date(booking.checkOut).toLocaleDateString()}
+                      {formatDate(booking.checkIn)} to {formatDate(booking.checkOut)}
                     </p>
                     <p className="text-xs text-navy-500/70 mt-1">
                       {booking.numberOfRooms} Room(s) • {booking.adults} Adults, {booking.children} Child
@@ -153,7 +159,7 @@ export const Bookings = () => {
                     </span>
                     <p className="text-[10px] text-navy-500/50 mt-2 flex items-center gap-1 uppercase tracking-wider">
                       <Clock className="w-3 h-3" />
-                      {new Date(booking.createdAt).toLocaleDateString()}
+                      {formatDate(booking.createdAt)}
                     </p>
                   </td>
                   <td className="py-4 px-6 text-right">
