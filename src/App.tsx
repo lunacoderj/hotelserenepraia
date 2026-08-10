@@ -18,6 +18,8 @@ import { OfferLayout } from './pages/offers/OfferLayout'
 import { ClaimOffer } from './pages/offers/ClaimOffer'
 import { NearbyLanding } from './pages/NearbyLanding'
 import { GuidePage } from './pages/GuidePage'
+import { Privacy } from './pages/Privacy'
+import { Terms } from './pages/Terms'
 import { NotFound } from './pages/NotFound'
 import { AdminRoutes } from './admin/AdminRoutes'
 
@@ -94,6 +96,8 @@ function App() {
           <Route path="/guide/:slug" element={<Layout><GuidePage /></Layout>} />
           <Route path="/offers/:slug" element={<Layout><OfferLayout /></Layout>} />
           <Route path="/claim-offer/:id" element={<ClaimOffer />} />
+          <Route path="/privacy" element={<Layout><Privacy /></Layout>} />
+          <Route path="/terms" element={<Layout><Terms /></Layout>} />
           {/* Only allow /admin path access in local development */}
           {isLocal && <Route path="/admin/*" element={<AdminRoutes />} />}
           <Route path="*" element={<Layout><NotFound /></Layout>} />
