@@ -236,7 +236,7 @@ export const Contact = () => {
                 <option value="2">2 Persons</option>
                 <option value="3">3 Persons</option>
               </select>
-              <span className="text-[10px] text-gold font-medium mt-1">* For extra persons ({">"}3), please contact us directly via Call.</span>
+              <span className="text-[10px] text-gold font-medium mt-1">* For extra persons ({">"}3), please contact us directly via Call with +919494042204 & 08912502949 numbers.</span>
             </div>
 
             <div className="flex flex-col gap-2">
