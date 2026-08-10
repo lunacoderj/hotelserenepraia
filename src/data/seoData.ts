@@ -21,86 +21,141 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Hotel Serene Praia is the best beach hotel near Rushikonda Beach, Visakhapatnam. Luxury sea-view rooms from ₹1,999/night, premium suites, grand banquet hall, and world-class coastal hospitality. Book direct for best rates.',
     canonical: 'https://hotelserenepraia.in/',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png',
-    keywords: ['hotel in rushikonda', 'best hotel in rushikonda', 'beach hotel vizag', 'luxury hotel visakhapatnam', 'hotel near rushikonda beach', 'sea view rooms vizag'],
+    keywords: [
+      'hotel in rushikonda', 'best hotel in rushikonda', 'beach hotel vizag', 'luxury hotel visakhapatnam',
+      'hotel near rushikonda beach', 'sea view rooms vizag', 'hotel serene praia', 'serene praia vizag',
+      'visakhapatnam beach resorts', 'stay in rushikonda', 'hotels near gitam university', 'top hotels in vizag',
+      'hotel serene praia rushikonda', 'affordable luxury hotel vizag', 'best place to stay in vizag',
+      'family hotel visakhapatnam', 'couple friendly hotels vizag', 'rushikonda beach view hotel',
+      'vizag sea view stay', 'premium hotels near rushikonda'
+    ],
   },
   rooms: {
     title: 'Luxury Rooms & Suites Near Rushikonda Beach | Hotel Serene Praia Vizag',
     description: 'Book luxury rooms and suites at Hotel Serene Praia near Rushikonda Beach, Visakhapatnam. Deluxe rooms from ₹1,999, premium rooms, executive sea-view rooms, and spacious suites. Best rate guaranteed.',
     canonical: 'https://hotelserenepraia.in/rooms',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/executive_room.jpeg',
-    keywords: ['luxury rooms vizag', 'premium rooms rushikonda', 'suite room vizag', 'hotel rooms near rushikonda beach', 'deluxe rooms visakhapatnam'],
+    keywords: [
+      'luxury rooms vizag', 'premium rooms rushikonda', 'suite room vizag', 'hotel rooms near rushikonda beach',
+      'deluxe rooms visakhapatnam', 'hotel serene praia rooms', 'sea view rooms rushikonda',
+      'best rooms in vizag', 'family suite vizag', 'couple stay vizag', 'accommodation in rushikonda',
+      'visakhapatnam hotel room booking', 'vizag luxury accommodation'
+    ],
   },
   'room-deluxe': {
     title: 'Deluxe Room — Comfortable Stay Near Rushikonda Beach | Hotel Serene Praia',
     description: 'Book a Deluxe Room at Hotel Serene Praia for ₹1,999/night. Comfortable king bed, smart TV, electric kettle, and attached bathroom. The ideal affordable luxury stay near Rushikonda Beach, Visakhapatnam.',
     canonical: 'https://hotelserenepraia.in/rooms/deluxe-room',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/deluxe_bed.jpeg',
-    keywords: ['deluxe room rushikonda', 'affordable hotel room vizag', 'comfortable stay near beach vizag'],
+    keywords: [
+      'deluxe room rushikonda', 'affordable hotel room vizag', 'comfortable stay near beach vizag',
+      'budget luxury room vizag', 'hotel serene praia deluxe room', 'best deluxe room visakhapatnam',
+      'rushikonda beach hotel room', 'cheap hotels in rushikonda', 'vizag budget stay'
+    ],
   },
   'room-premium': {
     title: 'Premium Room — Elegant Interiors Near Rushikonda Beach | Hotel Serene Praia',
     description: 'Experience the Premium Room at Hotel Serene Praia for ₹2,899/night. Premium king bed, elegant wooden interiors, glass shower bathroom, and natural lighting. Located near Rushikonda Beach, Visakhapatnam.',
     canonical: 'https://hotelserenepraia.in/rooms/premium-room',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/IMG_3041.JPG-1200x900.webp',
-    keywords: ['premium room vizag', 'best hotel room near beach vizag', 'premium stay rushikonda'],
+    keywords: [
+      'premium room vizag', 'best hotel room near beach vizag', 'premium stay rushikonda',
+      'hotel serene praia premium room', 'luxury room visakhapatnam', 'premium accommodation vizag',
+      'rushikonda premium hotel', 'top rated rooms vizag', 'elegant stay visakhapatnam'
+    ],
   },
   'room-executive': {
     title: 'Executive Sea View Room — Business & Leisure | Hotel Serene Praia Vizag',
     description: 'The Executive Room at Hotel Serene Praia offers breathtaking sea views from ₹4,099/night. Mini fridge, electric kettle, premium bathroom, and beach views. Perfect for business travellers and premium guests in Visakhapatnam.',
     canonical: 'https://hotelserenepraia.in/rooms/executive-room',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/rooms/executive_room.jpeg',
-    keywords: ['executive room vizag', 'sea view room rushikonda', 'business hotel vizag', 'hotel near IT SEZ vizag'],
+    keywords: [
+      'executive room vizag', 'sea view room rushikonda', 'business hotel vizag', 'hotel near IT SEZ vizag',
+      'hotel serene praia executive room', 'business stay visakhapatnam', 'corporate hotel vizag',
+      'best sea view room vizag', 'premium sea view stay rushikonda', 'executive suite vizag'
+    ],
   },
   'room-suite': {
     title: 'Suite Room — Spacious Family & Honeymoon Suite | Hotel Serene Praia Vizag',
     description: 'Our Suite Room features a separate living room, sofa lounge, mini fridge, and stunning sea views from ₹4,499/night. Ideal for families, VIP guests, and honeymoon couples. Hotel Serene Praia, Rushikonda Beach.',
     canonical: 'https://hotelserenepraia.in/rooms/suite-room',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/beachview.webp',
-    keywords: ['suite room vizag', 'family room rushikonda', 'honeymoon hotel vizag', '2 room suite near beach vizag'],
+    keywords: [
+      'suite room vizag', 'family room rushikonda', 'honeymoon hotel vizag', '2 room suite near beach vizag',
+      'hotel serene praia suite', 'luxury suite visakhapatnam', 'best suite room vizag',
+      'honeymoon suite rushikonda', 'family stay vizag', 'presidential suite vizag equivalent'
+    ],
   },
   banquet: {
     title: 'Premium Banquet Hall in Rushikonda | Weddings & Events | Hotel Serene Praia',
     description: 'Host weddings, corporate events, and celebrations at Hotel Serene Praia\'s premium AC banquet hall in Rushikonda, Visakhapatnam. Spacious hall, stage, projector, and event management. Starting ₹22,999.',
     canonical: 'https://hotelserenepraia.in/banquet',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/hero%20image.png',
-    keywords: ['banquet hall rushikonda', 'wedding hall vizag', 'event venue vizag', 'corporate venue near beach vizag'],
+    keywords: [
+      'banquet hall rushikonda', 'wedding hall vizag', 'event venue vizag', 'corporate venue near beach vizag',
+      'hotel serene praia banquet hall', 'best banquet hall visakhapatnam', 'marriage hall vizag',
+      'party hall rushikonda', 'ac banquet hall vizag', 'conference hall near rushikonda'
+    ],
   },
   gallery: {
     title: 'Photo Gallery — Hotel Serene Praia, Rushikonda Beach, Visakhapatnam',
     description: 'Browse photos of Hotel Serene Praia — luxury rooms, elegant interiors, grand banquet hall, reception, and stunning sea views near Rushikonda Beach, Visakhapatnam.',
     canonical: 'https://hotelserenepraia.in/gallery',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png',
-    keywords: ['hotel photos rushikonda', 'hotel images vizag', 'luxury hotel interiors vizag'],
+    keywords: [
+      'hotel photos rushikonda', 'hotel images vizag', 'luxury hotel interiors vizag',
+      'hotel serene praia gallery', 'hotel serene praia photos', 'rushikonda hotel pictures',
+      'vizag beach hotel photos', 'hotel serene praia inside view'
+    ],
   },
   contact: {
     title: 'Contact & Book — Hotel Serene Praia, Rushikonda, Visakhapatnam',
     description: 'Contact Hotel Serene Praia to book your stay near Rushikonda Beach. Call 0891-2502949, WhatsApp +91 94940 42204, or fill our booking form. Located at Swarnabharathi Nagar, Rushikonda, Visakhapatnam.',
     canonical: 'https://hotelserenepraia.in/contact',
-    keywords: ['book hotel vizag', 'hotel contact rushikonda', 'hotel booking near rushikonda beach'],
+    keywords: [
+      'book hotel vizag', 'hotel contact rushikonda', 'hotel booking near rushikonda beach',
+      'hotel serene praia contact number', 'hotel serene praia booking', 'hotel serene praia phone number',
+      'contact hotel serene praia', 'vizag hotel reservations', 'book rushikonda hotel'
+    ],
   },
   about: {
     title: 'About Hotel Serene Praia — Our Story | Luxury Coastal Hotel, Rushikonda',
     description: 'Established in 2018, Hotel Serene Praia is a luxury coastal hotel near Rushikonda Beach, Visakhapatnam. Discover our story of blending modern luxury with the natural beauty of the Bay of Bengal.',
     canonical: 'https://hotelserenepraia.in/about',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/ChatGPT%20Image%20Jul%2013%2C%202026%2C%2003_26_03%20PM.png',
-    keywords: ['hotel near rushikonda beach', 'luxury hotel vizag', 'coastal hotel visakhapatnam'],
+    keywords: [
+      'hotel near rushikonda beach', 'luxury hotel vizag', 'coastal hotel visakhapatnam',
+      'about hotel serene praia', 'hotel serene praia history', 'best beach side hotel vizag',
+      'top rated hotel rushikonda', 'hotel serene praia owner', 'hotel serene praia details'
+    ],
   },
   attractions: {
     title: 'Tourist Attractions Near Rushikonda — Places to Visit | Hotel Serene Praia',
     description: 'Discover the best tourist attractions near Hotel Serene Praia, Rushikonda. Visit Rushikonda Beach, Kailasagiri, RK Beach, Thotlakonda, Bheemili Beach, INS Kurusura, Tenneti Park, and more.',
     canonical: 'https://hotelserenepraia.in/attractions',
     ogImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/rushikondabeach.jpg',
-    keywords: ['tourist places near rushikonda', 'places to visit near vizag hotel', 'adventure activities near rushikonda beach'],
+    keywords: [
+      'tourist places near rushikonda', 'places to visit near vizag hotel', 'adventure activities near rushikonda beach',
+      'vizag sightseeing', 'rushikonda beach activities', 'things to do in vizag',
+      'kailasagiri nearby hotels', 'thotlakonda nearby hotels', 'vizag tourist attractions'
+    ],
   },
   privacy: {
     title: 'Privacy Policy | Hotel Serene Praia',
     description: 'Read Hotel Serene Praia\'s privacy policy. Learn how we collect, use, and protect your personal data when you visit our website or book a stay.',
     canonical: 'https://hotelserenepraia.in/privacy',
+    keywords: [
+      'hotel serene praia privacy policy', 'privacy policy vizag hotel', 'hotel data protection'
+    ],
   },
   terms: {
     title: 'Terms of Service | Hotel Serene Praia',
     description: 'Review Hotel Serene Praia\'s terms of service, including booking conditions, cancellation policy, check-in and check-out times, and guest responsibilities.',
     canonical: 'https://hotelserenepraia.in/terms',
+    keywords: [
+      'hotel serene praia terms', 'hotel serene praia conditions', 'hotel policies vizag',
+      'cancellation policy hotel serene praia'
+    ],
   },
 };
 

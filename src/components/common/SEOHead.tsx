@@ -30,12 +30,14 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   const finalDescription = description || seo?.description || SEO_CONFIG.defaultDescription;
   const finalCanonical = canonical || seo?.canonical || `${SEO_CONFIG.siteUrl}${location.pathname}`;
   const finalOgImage = ogImage || seo?.ogImage || SEO_CONFIG.defaultOgImage;
+  const finalKeywords = seo?.keywords || SEO_CONFIG.keywords;
 
   return (
     <Helmet>
       {/* Primary */}
       <title>{finalTitle}</title>
       <meta name="description" content={finalDescription} />
+      <meta name="keywords" content={finalKeywords.join(', ')} />
       <link rel="canonical" href={finalCanonical} />
 
       {/* Robots */}

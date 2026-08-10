@@ -83,16 +83,25 @@ export const Contact = () => {
             className="flex flex-col gap-6"
           >
             {/* Phone Card */}
-            <a href={`tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}`} className="group p-8 rounded-2xl bg-white border border-navy/5 shadow-xl shadow-navy/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 flex items-start gap-6">
+            <div className="group p-8 rounded-2xl bg-white border border-navy/5 shadow-xl shadow-navy/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 flex items-start gap-6">
               <div className="p-4 rounded-full bg-gold/10 text-gold group-hover:scale-110 transition-transform duration-500">
                 <Phone className="w-6 h-6" />
               </div>
-              <div>
+              <div className="flex-1">
                 <h3 className="font-display text-2xl text-navy mb-2">Reservations</h3>
-                <p className="text-navy/60 mb-1">Call us directly</p>
-                <p className="text-gold font-medium tracking-wide">{CONTACT_CONFIG.phone}</p>
+                <p className="text-navy/60 mb-4">Call us directly</p>
+                <div className="flex flex-col gap-3">
+                  <a href={`tel:${CONTACT_CONFIG.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-2 hover:translate-x-1 transition-transform group/link">
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-navy/40 w-20">Landline</span>
+                    <span className="text-gold font-medium tracking-wide group-hover/link:text-gold-600">{CONTACT_CONFIG.phone}</span>
+                  </a>
+                  <a href={`tel:${CONTACT_CONFIG.whatsapp.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-2 hover:translate-x-1 transition-transform group/link">
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-navy/40 w-20">Mobile</span>
+                    <span className="text-gold font-medium tracking-wide group-hover/link:text-gold-600">{CONTACT_CONFIG.whatsapp}</span>
+                  </a>
+                </div>
               </div>
-            </a>
+            </div>
 
             {/* Email Card */}
             <a href={`mailto:${CONTACT_CONFIG.email}`} className="group p-8 rounded-2xl bg-white border border-navy/5 shadow-xl shadow-navy/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 flex items-start gap-6">
