@@ -61,47 +61,10 @@ export const Privacy: React.FC = () => {
             </ul>
           </section>
 
-          {/* Section 3: Google AdSense and Third-Party Advertising (Critical for AdSense Compliance) */}
-          <section className="bg-pearl/50 p-6 md:p-8 rounded-sm border-l-4 border-gold">
-            <h2 className="font-display text-heading-sm text-navy mb-4">
-              3. Google AdSense & Third-Party Advertising Cookies
-            </h2>
-            <p className="text-body-md text-navy-500/90 mb-4">
-              We may display advertisements on our website through third-party advertising partners, including <strong>Google AdSense</strong>.
-            </p>
-            <ul className="list-disc pl-6 space-y-3 text-body-sm text-navy-500/80 mb-4">
-              <li>
-                <strong>Third-Party Vendor Cookies:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website or other websites across the Internet.
-              </li>
-              <li>
-                <strong>Personalized Advertising:</strong> Google's use of advertising cookies enables it and its partners to serve personalized ads to our visitors based on their visit to our site and/or other sites on the Internet.
-              </li>
-              <li>
-                <strong>Opting Out:</strong> You may opt out of personalized advertising by visiting{' '}
-                <a 
-                  href="https://www.google.com/settings/ads" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gold font-medium hover:underline"
-                >
-                  Google Ads Settings
-                </a>. Alternatively, you can opt out of third-party vendor use of cookies for personalized advertising by visiting{' '}
-                <a 
-                  href="https://www.aboutads.info/choices/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-gold font-medium hover:underline"
-                >
-                  www.aboutads.info/choices
-                </a>.
-              </li>
-            </ul>
-          </section>
-
-          {/* Section 4 */}
+          {/* Section 3 */}
           <section>
             <h2 className="font-display text-heading-sm text-navy mb-4 border-b border-gold/30 pb-2">
-              4. Web Analytics and Tracking Technologies
+              3. Web Analytics and Tracking Technologies
             </h2>
             <p className="text-body-md text-navy-500/90 mb-3">
               We use <strong>Google Analytics</strong> to evaluate website traffic, track user engagement patterns, and enhance user experience. Google Analytics gathers information about website use by means of cookies. The information gathered relating to our website is used to create reports about the use of our website. Google's privacy policy is available at:{' '}
@@ -116,10 +79,10 @@ export const Privacy: React.FC = () => {
             </p>
           </section>
 
-          {/* Section 5 */}
+          {/* Section 4 */}
           <section>
             <h2 className="font-display text-heading-sm text-navy mb-4 border-b border-gold/30 pb-2">
-              5. How We Use Collected Data
+              4. How We Use Collected Data
             </h2>
             <p className="text-body-md text-navy-500/90 mb-3">
               Your information is utilized solely for legitimate business purposes:
@@ -133,30 +96,30 @@ export const Privacy: React.FC = () => {
             </ul>
           </section>
 
-          {/* Section 6 */}
+          {/* Section 5 */}
           <section>
             <h2 className="font-display text-heading-sm text-navy mb-4 border-b border-gold/30 pb-2">
-              6. Data Protection & Security
+              5. Data Protection & Security
             </h2>
             <p className="text-body-md text-navy-500/90">
               We implement industry-standard administrative, technical, and physical security measures to safeguard your personal information against unauthorized access, loss, alteration, or misuse. However, please understand that no method of transmission over the Internet is 100% secure.
             </p>
           </section>
 
-          {/* Section 7 */}
+          {/* Section 6 */}
           <section>
             <h2 className="font-display text-heading-sm text-navy mb-4 border-b border-gold/30 pb-2">
-              7. Your Rights & Cookie Management
+              6. Your Rights & Cookie Management
             </h2>
             <p className="text-body-md text-navy-500/90 mb-3">
               You have the right to access, update, or request the deletion of any personal data we hold about you. Furthermore, most web browsers permit you to manage or disable cookie preferences through your individual browser settings. Note that disabling cookies may affect the functionality of certain website features.
             </p>
           </section>
 
-          {/* Section 8 */}
+          {/* Section 7 */}
           <section>
             <h2 className="font-display text-heading-sm text-navy mb-4 border-b border-gold/30 pb-2">
-              8. Contact Us
+              7. Contact Us
             </h2>
             <p className="text-body-md text-navy-500/90 mb-4">
               If you have any questions regarding this Privacy Policy or wish to exercise your data protection rights, please reach out to us:
