@@ -1,6 +1,6 @@
 export const SEO_CONFIG = {
   siteName: 'Hotel Serene Praia',
-  siteUrl: 'https://hotelserenepraia.in',
+  siteUrl: 'https://www.hotelserenepraia.in',
   defaultTitle: 'Hotel Serene Praia | Best Beach Hotel in Rushikonda, Visakhapatnam',
   defaultDescription: 'Hotel Serene Praia is the best beach hotel near Rushikonda Beach, Visakhapatnam. Enjoy luxury sea-view rooms, premium suites, grand banquet hall, and world-class coastal hospitality. Book online or via WhatsApp.',
   defaultOgImage: 'https://1zn1w7lqhv0bhjja.public.blob.vercel-storage.com/hotel-serene/building.png',

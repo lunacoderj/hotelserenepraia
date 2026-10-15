@@ -9,5 +9,5 @@ export const CONTACT_CONFIG = {
   instagram: 'https://instagram.com/hotelserenepraia',
   facebook: 'https://facebook.com/hotelserenepraia',
   twitter: 'https://twitter.com/hotelserenepraia',
-  website: 'https://hotelserenepraia.in/'
+  website: 'https://www.hotelserenepraia.in/'
 } as const
